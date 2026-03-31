@@ -3,27 +3,27 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>TripFactory — PSA Partner Hub</title>
+<title>TripFactory PSA Partner Hub</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600&display=swap" rel="stylesheet">
 <style>
-/* ═══ RESET & TOKENS ═══ */
+
 :root{
-  --navy:#0f1623; --navy2:#1a2535; --red:#cc3300; --red2:#e84a20;
-  --gold:#c9962a; --teal:#0d8c7e; --green:#166534;
-  --white:#fff; --off:#f8f9fb; --border:#e4e6ec;
-  --text:#111827; --sub:#6b7280;
-  --r:10px; --sh:0 1px 4px rgba(0,0,0,.06),0 4px 16px rgba(0,0,0,.07);
+  --navy:#0f1623;--navy2:#1a2535;--red:#cc3300;
+  --gold:#c9962a;--teal:#0d8c7e;--green:#166534;
+  --white:#fff;--off:#f8f9fb;--border:#e4e6ec;
+  --text:#111827;--sub:#6b7280;
+  --r:10px;
+  --sh:0 1px 4px rgba(0,0,0,.06),0 4px 16px rgba(0,0,0,.07);
   --sh2:0 4px 24px rgba(0,0,0,.13);
 }
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
 body{font-family:'DM Sans',sans-serif;background:#fff;color:var(--text);font-size:14px;line-height:1.6;}
-a{color:inherit;text-decoration:none;}
 
-/* ═══ TOP NAV ═══ */
+/* NAV */
 .hub-nav{
-  position:sticky;top:0;z-index:1000;
-  background:#fff;border-bottom:1px solid var(--border);
+  position:sticky;top:0;z-index:1000;background:#fff;
+  border-bottom:1px solid var(--border);
   box-shadow:0 1px 8px rgba(0,0,0,.06);
   display:flex;align-items:center;padding:0 32px;height:62px;
 }
@@ -45,16 +45,17 @@ a{color:inherit;text-decoration:none;}
 .nav-tab.active{color:var(--red);border-bottom-color:var(--red);}
 .nav-right{margin-left:auto;flex-shrink:0;padding-left:20px;}
 .nav-badge{
-  background:rgba(204,51,0,.08);color:var(--red);border:1px solid rgba(204,51,0,.2);
+  background:rgba(204,51,0,.08);color:var(--red);
+  border:1px solid rgba(204,51,0,.2);
   padding:5px 12px;border-radius:20px;font-size:11px;font-weight:600;white-space:nowrap;
 }
 
-/* ═══ SECTIONS ═══ */
+/* SECTIONS */
 .hub-section{display:none;min-height:calc(100vh - 62px);}
 .hub-section.active{display:block;animation:fu .22s ease;}
 @keyframes fu{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:translateY(0);}}
 
-/* ═══ HERO ═══ */
+/* HERO */
 .hero{
   background:linear-gradient(135deg,#080d15 0%,#0f1623 55%,#1c0a04 100%);
   padding:64px 52px;position:relative;overflow:hidden;
@@ -65,11 +66,6 @@ a{color:inherit;text-decoration:none;}
   background:radial-gradient(circle,rgba(204,51,0,.22) 0%,transparent 68%);
   pointer-events:none;
 }
-.hero::after{
-  content:'PSA';position:absolute;right:40px;bottom:-30px;
-  font-family:'DM Serif Display',serif;font-size:200px;
-  color:rgba(255,255,255,.025);line-height:1;pointer-events:none;
-}
 .hero-inner{max-width:660px;position:relative;z-index:1;}
 .hero-tag{
   display:inline-flex;align-items:center;gap:5px;
@@ -77,10 +73,7 @@ a{color:inherit;text-decoration:none;}
   color:#ff9070;font-size:10.5px;font-weight:700;letter-spacing:1px;
   text-transform:uppercase;padding:4px 12px;border-radius:20px;margin-bottom:14px;
 }
-.hero-h1{
-  font-family:'DM Serif Display',serif;font-size:42px;color:#fff;
-  line-height:1.18;margin-bottom:14px;
-}
+.hero-h1{font-family:'DM Serif Display',serif;font-size:42px;color:#fff;line-height:1.18;margin-bottom:14px;}
 .hero-sub{font-size:15px;color:rgba(255,255,255,.58);line-height:1.75;margin-bottom:28px;max-width:540px;}
 .hero-ctas{display:flex;gap:10px;flex-wrap:wrap;}
 .btn-p{
@@ -91,41 +84,29 @@ a{color:inherit;text-decoration:none;}
 }
 .btn-p:hover{opacity:.85;}
 .btn-g{
-  background:rgba(255,255,255,.1);color:#fff;
-  border:1px solid rgba(255,255,255,.2);
+  background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.2);
   padding:11px 22px;border-radius:8px;font-size:13px;font-weight:500;cursor:pointer;
   font-family:'DM Sans',sans-serif;display:inline-flex;align-items:center;gap:6px;
   transition:background .15s;
 }
 .btn-g:hover{background:rgba(255,255,255,.18);}
 
-/* ═══ STATS STRIP ═══ */
-.stats{
-  background:#fff;border-bottom:1px solid var(--border);
-  display:grid;grid-template-columns:repeat(5,1fr);
-}
+/* STATS */
+.stats{background:#fff;border-bottom:1px solid var(--border);display:grid;grid-template-columns:repeat(5,1fr);}
 .stat{text-align:center;padding:20px 12px;border-right:1px solid var(--border);}
 .stat:last-child{border-right:none;}
 .stat-n{font-family:'DM Serif Display',serif;font-size:30px;color:var(--red);}
 .stat-l{font-size:11px;color:var(--sub);margin-top:1px;}
 
-/* ═══ PAGE WRAP ═══ */
+/* LAYOUT */
 .pw{max-width:1080px;margin:0 auto;padding:40px 32px;}
-
-/* ═══ SECTION LABEL ═══ */
-.sl{
-  font-family:'DM Serif Display',serif;font-size:19px;color:var(--navy);
-  margin-bottom:18px;display:flex;align-items:center;gap:12px;
-}
+.sl{font-family:'DM Serif Display',serif;font-size:19px;color:var(--navy);margin-bottom:18px;display:flex;align-items:center;gap:12px;}
 .sl::after{content:'';flex:1;height:1px;background:var(--border);}
 
-/* ═══ CARDS ═══ */
+/* CARDS */
 .g3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:32px;}
 .g2{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-bottom:32px;}
-.card{
-  background:#fff;border-radius:var(--r);border:1px solid var(--border);
-  padding:22px;box-shadow:var(--sh);transition:all .2s;
-}
+.card{background:#fff;border-radius:var(--r);border:1px solid var(--border);padding:22px;box-shadow:var(--sh);transition:all .2s;}
 .card:hover{box-shadow:var(--sh2);transform:translateY(-1px);}
 .card.al{border-left:4px solid var(--red);}
 .card.at{border-left:4px solid var(--teal);}
@@ -135,31 +116,24 @@ a{color:inherit;text-decoration:none;}
 .ct{font-family:'DM Serif Display',serif;font-size:16px;color:var(--navy);margin-bottom:6px;}
 .cb{font-size:13px;color:var(--sub);line-height:1.65;}
 
-/* ═══ TIERS ═══ */
+/* TIERS */
 .tier-g{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:32px;}
 .tier-card{border-radius:var(--r);overflow:hidden;box-shadow:var(--sh2);}
 .tier-hdr{padding:22px 20px;text-align:center;}
 .tier-hdr.t1{background:linear-gradient(135deg,#1b5e20,#2e7d32);}
 .tier-hdr.t2{background:linear-gradient(135deg,#1565c0,#1976d2);}
 .tier-hdr.t3{background:linear-gradient(135deg,#8b1200,#cc3300);}
-.tier-badge{
-  display:inline-block;padding:3px 10px;border-radius:20px;
-  background:rgba(255,255,255,.2);color:rgba(255,255,255,.9);
-  font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;
-}
+.tier-badge{display:inline-block;padding:3px 10px;border-radius:20px;background:rgba(255,255,255,.2);color:rgba(255,255,255,.9);font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;}
 .tier-name{font-family:'DM Serif Display',serif;font-size:20px;color:#fff;margin-bottom:3px;}
 .tier-tgt{font-size:11.5px;color:rgba(255,255,255,.6);}
 .tier-body{background:#fff;border:1px solid var(--border);border-top:none;padding:18px 20px;}
-.tr{
-  display:flex;justify-content:space-between;align-items:center;
-  padding:7px 0;border-bottom:1px solid var(--border);font-size:13px;
-}
+.tr{display:flex;justify-content:space-between;align-items:center;padding:7px 0;border-bottom:1px solid var(--border);font-size:13px;}
 .tr:last-child{border-bottom:none;}
 .trl{color:var(--sub);}
 .trv{font-weight:600;color:var(--text);}
 .trv.big{color:var(--red);font-size:15px;font-weight:700;}
 
-/* ═══ COMMISSION MODELS ═══ */
+/* COMMISSION MODELS */
 .model-g{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-bottom:32px;}
 .model-card{border-radius:var(--r);overflow:hidden;box-shadow:var(--sh);}
 .model-hdr{padding:18px 22px;}
@@ -170,55 +144,34 @@ a{color:inherit;text-decoration:none;}
 .model-body{background:#fff;border:1px solid var(--border);border-top:none;padding:18px 22px;}
 .step{display:flex;gap:12px;padding:9px 0;border-bottom:1px solid var(--border);font-size:13px;}
 .step:last-of-type{border-bottom:none;}
-.sn{
-  width:22px;height:22px;border-radius:50%;flex-shrink:0;
-  display:flex;align-items:center;justify-content:center;
-  font-size:10px;font-weight:700;margin-top:2px;
-}
+.sn{width:22px;height:22px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;margin-top:2px;}
 .ma .sn{background:var(--navy);color:#fff;}
 .mb .sn{background:var(--red);color:#fff;}
 .st{font-size:13px;color:var(--text);line-height:1.55;}
-.ex-box{
-  margin-top:12px;padding:12px 14px;border-radius:7px;
-  background:var(--off);border:1px solid var(--border);
-}
+.ex-box{margin-top:12px;padding:12px 14px;border-radius:7px;background:var(--off);border:1px solid var(--border);}
 .ex-t{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--sub);margin-bottom:7px;}
 .ex-r{display:flex;justify-content:space-between;font-size:12px;padding:3px 0;}
 .ex-l{color:var(--sub);}
 .ex-v{font-weight:600;color:var(--text);}
 
-/* ═══ CREDIT FACILITY ═══ */
-.credit{
-  background:linear-gradient(135deg,#080d15,#1a2535);
-  border-radius:var(--r);padding:32px;margin-bottom:32px;
-  display:grid;grid-template-columns:1fr 1fr;gap:32px;box-shadow:var(--sh2);
-}
+/* CREDIT */
+.credit{background:linear-gradient(135deg,#080d15,#1a2535);border-radius:var(--r);padding:32px;margin-bottom:32px;display:grid;grid-template-columns:1fr 1fr;gap:32px;box-shadow:var(--sh2);}
 .cr-l h2{font-family:'DM Serif Display',serif;font-size:26px;color:#fff;margin-bottom:10px;}
 .cr-l p{font-size:13.5px;color:rgba(255,255,255,.55);line-height:1.75;margin-bottom:20px;}
-.cr-formula{
-  background:rgba(255,255,255,.07);border-radius:8px;
-  padding:16px 20px;display:flex;align-items:center;gap:18px;
-}
+.cr-formula{background:rgba(255,255,255,.07);border-radius:8px;padding:16px 20px;display:flex;align-items:center;gap:18px;}
 .cf-p{text-align:center;}
 .cf-n{font-family:'DM Serif Display',serif;font-size:28px;color:var(--red);}
 .cf-l{font-size:11px;color:rgba(255,255,255,.4);}
 .cf-op{font-size:24px;color:rgba(255,255,255,.25);padding-top:6px;}
 .cr-egs{display:flex;flex-direction:column;gap:10px;}
-.cr-eg{
-  background:rgba(255,255,255,.06);border-radius:8px;
-  padding:13px 16px;display:flex;align-items:center;justify-content:space-between;
-}
+.cr-eg{background:rgba(255,255,255,.06);border-radius:8px;padding:13px 16px;display:flex;align-items:center;justify-content:space-between;}
 .cr-eg-d{font-size:13px;color:rgba(255,255,255,.55);}
 .cr-eg-d strong{color:#fff;}
 .cr-eg-arrow{color:rgba(255,255,255,.2);font-size:16px;}
 .cr-eg-lim{font-family:'DM Serif Display',serif;font-size:18px;color:var(--gold);}
-.cr-note{
-  margin-top:12px;padding:10px 14px;border-radius:7px;
-  background:rgba(201,150,42,.1);border:1px solid rgba(201,150,42,.2);
-  font-size:12px;color:#f0c060;line-height:1.5;
-}
+.cr-note{margin-top:12px;padding:10px 14px;border-radius:7px;background:rgba(201,150,42,.1);border:1px solid rgba(201,150,42,.2);font-size:12px;color:#f0c060;line-height:1.5;}
 
-/* ═══ CALLOUTS ═══ */
+/* CALLOUTS */
 .callout{border-radius:8px;padding:13px 16px;margin-bottom:14px;border-left:4px solid;}
 .callout.tip{background:#f0fdf9;border-color:var(--teal);}
 .callout.tip .ch{color:var(--teal);}
@@ -229,19 +182,12 @@ a{color:inherit;text-decoration:none;}
 .ch{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;margin-bottom:4px;}
 .callout p{font-size:13px;line-height:1.6;}
 
-/* ═══ POLICIES ═══ */
+/* POLICIES */
 .p-list{display:flex;flex-direction:column;gap:8px;}
 .p-item{background:#fff;border:1px solid var(--border);border-radius:var(--r);overflow:hidden;box-shadow:var(--sh);}
-.p-hdr{
-  display:flex;align-items:center;gap:14px;
-  padding:15px 20px;cursor:pointer;transition:background .15s;user-select:none;
-}
+.p-hdr{display:flex;align-items:center;gap:14px;padding:15px 20px;cursor:pointer;transition:background .15s;user-select:none;}
 .p-hdr:hover{background:var(--off);}
-.p-num{
-  width:33px;height:33px;border-radius:8px;background:var(--navy);
-  color:#fff;display:flex;align-items:center;justify-content:center;
-  font-size:11.5px;font-weight:700;flex-shrink:0;
-}
+.p-num{width:33px;height:33px;border-radius:8px;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-size:11.5px;font-weight:700;flex-shrink:0;}
 .p-info{flex:1;}
 .p-title{font-size:13.5px;font-weight:600;color:var(--navy);}
 .p-sub{font-size:12px;color:var(--sub);}
@@ -250,16 +196,13 @@ a{color:inherit;text-decoration:none;}
 .p-body{display:none;padding:20px 24px;border-top:1px solid var(--border);background:#fafbfd;}
 .p-item.open .p-body{display:block;}
 .ps{margin-bottom:14px;}
-.ps-t{
-  font-size:12.5px;font-weight:700;color:var(--navy);
-  margin-bottom:5px;display:flex;align-items:center;gap:7px;
-}
+.ps-t{font-size:12.5px;font-weight:700;color:var(--navy);margin-bottom:5px;display:flex;align-items:center;gap:7px;}
 .ps-t::before{content:'';display:block;width:3px;height:13px;background:var(--red);border-radius:2px;}
 .ps p,.ps li{font-size:13px;color:var(--text);line-height:1.65;}
 .ps ul{padding-left:18px;}
 .ps li{margin-bottom:3px;}
 
-/* ═══ LEGAL REVIEW ═══ */
+/* LEGAL */
 .cmp-g{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:28px;}
 .cmp-card{border-radius:var(--r);overflow:hidden;box-shadow:var(--sh);}
 .cmp-hdr{padding:16px 20px;}
@@ -270,11 +213,10 @@ a{color:inherit;text-decoration:none;}
 .cmp-body{background:#fff;border:1px solid var(--border);border-top:none;padding:16px 20px;}
 .cmp-r{display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--border);font-size:12.5px;}
 .cmp-r:last-child{border-bottom:none;}
-.cmp-lbl{color:var(--sub);flex-shrink:0;max-width:40%;}
-.cmp-val{font-weight:500;color:var(--text);text-align:right;max-width:58%;}
+.cmp-lbl{color:var(--sub);flex-shrink:0;max-width:42%;}
+.cmp-val{font-weight:500;color:var(--text);text-align:right;max-width:56%;}
 .cmp-val.better{color:var(--teal);}
 .cmp-val.worse{color:var(--red);}
-
 .amend-table{width:100%;border-collapse:collapse;font-size:12.5px;margin-bottom:28px;}
 .amend-table th{background:var(--navy);color:#fff;padding:10px 13px;text-align:left;font-size:11.5px;font-weight:600;}
 .amend-table td{padding:10px 13px;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.6;}
@@ -285,61 +227,42 @@ a{color:inherit;text-decoration:none;}
 .b-md{background:rgba(201,150,42,.12);color:#92680a;}
 .b-lo{background:rgba(13,140,126,.1);color:var(--teal);}
 .b-in{background:rgba(21,101,192,.1);color:#1565c0;}
-
 .cov-g{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:28px;}
 .cov-card{border-radius:var(--r);padding:20px;text-align:center;border:1px solid;}
 .cov-n{font-size:32px;margin-bottom:6px;}
 .cov-t{font-size:14px;font-weight:600;margin-bottom:4px;}
 .cov-s{font-size:12px;color:var(--sub);}
 
-/* ═══ DOWNLOADS ═══ */
+/* DOWNLOADS */
 .dl-g{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:28px;}
-.dl-card{
-  background:#fff;border:1px solid var(--border);border-radius:var(--r);
-  padding:20px;display:flex;gap:16px;align-items:flex-start;
-  box-shadow:var(--sh);transition:all .15s;
-}
+.dl-card{background:#fff;border:1px solid var(--border);border-radius:var(--r);padding:20px;display:flex;gap:16px;align-items:flex-start;box-shadow:var(--sh);transition:all .15s;}
 .dl-card:hover{box-shadow:var(--sh2);border-color:rgba(204,51,0,.3);}
-.dl-icon{
-  width:46px;height:46px;border-radius:10px;flex-shrink:0;
-  display:flex;align-items:center;justify-content:center;font-size:22px;
-}
+.dl-icon{width:46px;height:46px;border-radius:10px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:22px;}
 .dl-icon.w{background:#dbeafe;}
 .dl-icon.l{background:#fde8e8;}
 .dl-info{flex:1;}
 .dl-title{font-size:14px;font-weight:600;color:var(--navy);margin-bottom:3px;}
 .dl-sub{font-size:12px;color:var(--sub);line-height:1.5;margin-bottom:10px;}
-.dl-btn{
-  display:inline-flex;align-items:center;gap:5px;
-  background:var(--navy);color:#fff;border:none;
-  padding:7px 14px;border-radius:6px;font-size:12px;font-weight:600;
-  cursor:pointer;font-family:'DM Sans',sans-serif;
-  transition:opacity .15s;
-}
+.dl-btn{display:inline-flex;align-items:center;gap:5px;background:var(--navy);color:#fff;border:none;padding:7px 14px;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif;transition:opacity .15s;text-decoration:none;}
 .dl-btn:hover{opacity:.8;}
 
-/* ═══ TRIP-ED WRAPPER ═══ */
+/* TRIP-ED ROOT */
 #tripped-root{min-height:calc(100vh - 62px);}
-#tripped-root *{font-family:inherit;}
 
-/* ═══ RESPONSIVE ═══ */
+/* RESPONSIVE */
 @media(max-width:768px){
   .hub-nav{padding:0 14px;}
-  .nav-tab{padding:0 11px;font-size:11.5px;}
+  .nav-tab{padding:0 10px;font-size:11.5px;}
   .hero{padding:40px 22px;}
-  .hero-h1{font-size:28px;}
+  .hero-h1{font-size:26px;}
   .stats{grid-template-columns:repeat(3,1fr);}
   .stats .stat:nth-child(4),.stats .stat:nth-child(5){display:none;}
   .g3,.tier-g{grid-template-columns:1fr;}
-  .model-g{grid-template-columns:1fr;}
-  .credit{grid-template-columns:1fr;}
-  .cmp-g{grid-template-columns:1fr;}
-  .cov-g{grid-template-columns:1fr;}
-  .dl-g{grid-template-columns:1fr;}
+  .model-g,.credit,.cmp-g,.cov-g,.dl-g{grid-template-columns:1fr;}
   .pw{padding:24px 16px;}
 }
 
-/* ═══ TRIP-ED SCOPED STYLES ═══ */
+/* TRIP-ED SCOPED STYLES */
 #tripped-root /* ─── TOKENS ─── */
 :root {
   --navy:   #0f1623;
@@ -456,235 +379,211 @@ a{color:inherit;text-decoration:none;}
 </style>
 </head>
 <body>
-
-<!-- ════════ NAV ════════ -->
 <nav class="hub-nav">
   <div class="hub-logo">
     <img src="data:image/png;base64,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AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAH//2Q==" alt="TripFactory">
     <div class="logo-div"></div>
-    <div>
-      <div class="logo-text">PSA Partner Hub</div>
-      <div class="logo-sub">Preferred Sales Agent Programme</div>
-    </div>
+    <div><div class="logo-text">PSA Partner Hub</div><div class="logo-sub">Preferred Sales Agent Programme</div></div>
   </div>
   <div class="nav-tabs">
-    <button class="nav-tab active"  onclick="show('home',this)">🏠 Home</button>
-    <button class="nav-tab"        onclick="show('programme',this)">📋 Programme</button>
-    <button class="nav-tab"        onclick="show('tiers',this)">🏆 Tiers & Commission</button>
-    <button class="nav-tab"        onclick="show('policies',this)">📖 Policies</button>
-    <button class="nav-tab"        onclick="show('tripped',this)">🎓 Trip-Ed Training</button>
-    <button class="nav-tab"        onclick="show('legal',this)">⚖️ Legal Review</button>
-    <button class="nav-tab"        onclick="show('downloads',this)">📥 Downloads</button>
+    <button class="nav-tab active"  onclick="show('home',this)">&#127968; Home</button>
+    <button class="nav-tab"        onclick="show('programme',this)">&#128203; Programme</button>
+    <button class="nav-tab"        onclick="show('tiers',this)">&#127942; Tiers &amp; Commission</button>
+    <button class="nav-tab"        onclick="show('policies',this)">&#128214; Policies</button>
+    <button class="nav-tab"        onclick="show('tripped',this)">&#127891; Trip-Ed Training</button>
+    <button class="nav-tab"        onclick="show('legal',this)">&#9878;&#65039; Legal Review</button>
+    <button class="nav-tab"        onclick="show('downloads',this)">&#128229; Downloads</button>
   </div>
-  <div class="nav-right">
-    <span class="nav-badge">India PSA v2.0</span>
-  </div>
+  <div class="nav-right"><span class="nav-badge">India PSA v2.0</span></div>
 </nav>
-
-<!-- ════════ HOME ════════ -->
 <div id="section-home" class="hub-section active">
   <div class="hero">
     <div class="hero-inner">
-      <div class="hero-tag">🇮🇳 India Partner Network</div>
+      <div class="hero-tag">&#127470;&#127475; India Partner Network</div>
       <h1 class="hero-h1">TripFactory Preferred<br>Sales Agent Programme</h1>
-      <p class="hero-sub">Build a high-earning travel business backed by TripFactory's vertically integrated platform, contracted hotel rates, and full BDM support. Earn up to 70% of Gross Profit on every confirmed booking — paid twice monthly.</p>
+      <p class="hero-sub">Build a high-earning travel business backed by TripFactory&#8217;s vertically integrated platform, contracted hotel rates, and full BDM support. Earn up to 70% of Gross Profit on every confirmed booking &#8212; paid twice monthly.</p>
       <div class="hero-ctas">
-        <button class="btn-p" onclick="show('programme')">📋 Programme Overview</button>
-        <button class="btn-g" onclick="show('tiers')">🏆 Tiers & Commission</button>
-        <button class="btn-g" onclick="show('tripped')">🎓 Start Trip-Ed</button>
+        <button class="btn-p" onclick="show('programme')">&#128203; Programme Overview</button>
+        <button class="btn-g" onclick="show('tiers')">&#127942; Tiers &amp; Commission</button>
+        <button class="btn-g" onclick="show('tripped')">&#127891; Start Trip-Ed</button>
       </div>
     </div>
   </div>
   <div class="stats">
     <div class="stat"><div class="stat-n">3</div><div class="stat-l">PSA Tiers</div></div>
     <div class="stat"><div class="stat-n">70%</div><div class="stat-l">Max Commission on GP</div></div>
-    <div class="stat"><div class="stat-n">4×</div><div class="stat-l">Credit Limit Multiplier</div></div>
+    <div class="stat"><div class="stat-n">4&#215;</div><div class="stat-l">Credit Limit Multiplier</div></div>
     <div class="stat"><div class="stat-n">11</div><div class="stat-l">Partner Policies</div></div>
     <div class="stat"><div class="stat-n">12</div><div class="stat-l">Trip-Ed Modules / Year</div></div>
   </div>
   <div class="pw">
     <div class="sl">What is the PSA Programme?</div>
     <div class="g3">
-      <div class="card al"><div class="ci">🤝</div><div class="ct">Independent Partnership</div><div class="cb">You run your own travel business — your premises, your staff, your brand alongside TripFactory's. We provide the product, platform, and commercial infrastructure. You provide the customer relationships and sales expertise.</div></div>
-      <div class="card at"><div class="ci">💸</div><div class="ct">Real Commission — Not Token Fees</div><div class="cb">Earn 60–70% of Gross Profit on every booking. Paid twice monthly — on the 15th and 30th — under a commission model you choose at signing. No waiting until month-end.</div></div>
-      <div class="card ag"><div class="ci">🏗️</div><div class="ct">Full Commercial Infrastructure</div><div class="cb">TripFactory's booking platform, contracted hotel rates, MICE capability, visa support, and a named BDM. Everything you need to compete with the largest travel agencies in India from Day 1.</div></div>
-      <div class="card an"><div class="ci">🎓</div><div class="ct">Trip-Ed Training Programme</div><div class="cb">Mandatory professional development — destination modules, product training, sales skills, compliance. 12 modules per year minimum. Complete induction before your first booking.</div></div>
-      <div class="card al"><div class="ci">💳</div><div class="ct">Credit Facility Available</div><div class="cb">Lodge a Security Deposit and access a Credit Limit of 4× that amount. Confirm bookings ahead of full customer payment — close deals faster with a powerful commercial advantage.</div></div>
-      <div class="card at"><div class="ci">📈</div><div class="ct">Tier Advancement — Earn More</div><div class="cb">Start at Tier 1 (60% commission). Hit ₹1.5 Crore to advance to Tier 2 (65%). Hit ₹3 Crore for Senior Partner status (70%). Every tier unlock is permanent performance-based recognition.</div></div>
+      <div class="card al"><div class="ci">&#129309;</div><div class="ct">Independent Partnership</div><div class="cb">You run your own travel business &#8212; your premises, your staff, your brand alongside TripFactory&#8217;s. We provide the product, platform, and commercial infrastructure. You provide the customer relationships and sales expertise.</div></div>
+      <div class="card at"><div class="ci">&#128176;</div><div class="ct">Real Commission &#8212; Not Token Fees</div><div class="cb">Earn 60&#8211;70% of Gross Profit on every booking. Paid twice monthly &#8212; on the 15th and 30th &#8212; under a commission model you choose at signing. No waiting until month-end.</div></div>
+      <div class="card ag"><div class="ci">&#127959;&#65039;</div><div class="ct">Full Commercial Infrastructure</div><div class="cb">TripFactory&#8217;s booking platform, contracted hotel rates, MICE capability, visa support, and a named BDM. Everything you need to compete with the largest travel agencies in India from Day 1.</div></div>
+      <div class="card an"><div class="ci">&#127891;</div><div class="ct">Trip-Ed Training Programme</div><div class="cb">Mandatory professional development &#8212; destination modules, product training, sales skills, compliance. 12 modules per year minimum. Complete induction before your first booking.</div></div>
+      <div class="card al"><div class="ci">&#128179;</div><div class="ct">Credit Facility Available</div><div class="cb">Lodge a Security Deposit and access a Credit Limit of 4&#215; that amount. Confirm bookings ahead of full customer payment &#8212; close deals faster with a powerful commercial advantage.</div></div>
+      <div class="card at"><div class="ci">&#128200;</div><div class="ct">Tier Advancement &#8212; Earn More</div><div class="cb">Start at Tier 1 (60% commission). Hit &#8377;1.5 Crore to advance to Tier 2 (65%). Hit &#8377;3 Crore for Senior Partner status (70%). Every tier unlock is permanent performance-based recognition.</div></div>
     </div>
     <div class="sl">Ideal PSA Profile</div>
     <div class="g2">
-      <div class="card"><div class="ct">✅ Who This Programme is For</div><ul style="font-size:13px;color:var(--sub);padding-left:18px;margin-top:8px;line-height:1.85;"><li>Experienced travel agents with an existing customer base</li><li>Independent travel agencies expanding their product portfolio</li><li>Corporate travel consultants adding leisure and MICE products</li><li>Community-connected professionals with strong referral networks</li><li>Anyone motivated to build a travel business with professional infrastructure</li></ul></div>
-      <div class="card"><div class="ct">🔑 What TripFactory Provides</div><ul style="font-size:13px;color:var(--sub);padding-left:18px;margin-top:8px;line-height:1.85;"><li>Named Business Development Manager — your dedicated commercial contact</li><li>Booking platform, CRM, quotation tools, real-time reporting</li><li>In-house contracted hotel rates — lower than OTA market rates</li><li>Monthly co-branded marketing assets, social media templates</li><li>Trip-Ed professional training programme</li><li>Full after-sales operations support for every confirmed booking</li></ul></div>
+      <div class="card"><div class="ct">&#10003; Who This Programme is For</div><ul style="font-size:13px;color:var(--sub);padding-left:18px;margin-top:8px;line-height:1.9;"><li>Experienced travel agents with an existing customer base</li><li>Independent travel agencies expanding their product portfolio</li><li>Corporate travel consultants adding leisure and MICE products</li><li>Community-connected professionals with strong referral networks</li><li>Anyone motivated to build a travel business with professional infrastructure</li></ul></div>
+      <div class="card"><div class="ct">&#128273; What TripFactory Provides</div><ul style="font-size:13px;color:var(--sub);padding-left:18px;margin-top:8px;line-height:1.9;"><li>Named Business Development Manager &#8212; your dedicated commercial contact</li><li>Booking platform, CRM, quotation tools, real-time reporting</li><li>In-house contracted hotel rates &#8212; lower than OTA market rates</li><li>Monthly co-branded marketing assets, social media templates</li><li>Trip-Ed professional training programme</li><li>Full after-sales operations support for every confirmed booking</li></ul></div>
     </div>
   </div>
 </div>
-
-<!-- ════════ PROGRAMME ════════ -->
 <div id="section-programme" class="hub-section">
   <div class="pw">
     <div class="sl" style="margin-top:8px;">Agreement at a Glance</div>
     <div class="g3">
-      <div class="card an"><div class="ci">📅</div><div class="ct">3-Year Initial Term</div><div class="cb">Runs for 3 years from the Effective Date. Automatic renewal unless either party gives 90 days' written notice. Annual review of commission rates and targets.</div></div>
-      <div class="card al"><div class="ci">🏛️</div><div class="ct">Indian Law · Bangalore Arbitration</div><div class="cb">Governed by Indian Contract Act 1872, DPDPA 2023, Consumer Protection Act 2019. Single arbitrator mutually agreed. Bangalore seat.</div></div>
-      <div class="card at"><div class="ci">📄</div><div class="ct">Non-Exclusive Appointment</div><div class="cb">TripFactory retains the right to appoint other PSA Partners in the same territory and sell directly. No territory lock-in is provided under this model.</div></div>
+      <div class="card an"><div class="ci">&#128197;</div><div class="ct">3-Year Initial Term</div><div class="cb">Runs for 3 years from the Effective Date. Automatic renewal unless either party gives 90 days&#8217; written notice. Annual review of commission rates and targets.</div></div>
+      <div class="card al"><div class="ci">&#127963;&#65039;</div><div class="ct">Indian Law &#183; Bangalore Arbitration</div><div class="cb">Governed by Indian Contract Act 1872, DPDPA 2023, Consumer Protection Act 2019. Single arbitrator mutually agreed. Bangalore seat.</div></div>
+      <div class="card at"><div class="ci">&#128203;</div><div class="ct">Non-Exclusive Appointment</div><div class="cb">TripFactory retains the right to appoint other PSA Partners in the same territory and sell directly. No territory lock-in is provided under this model.</div></div>
     </div>
     <div class="sl">Core PSA Obligations</div>
     <div class="g2">
-      <div class="card"><div class="ct">📊 Sales & Reporting</div><ul style="font-size:13px;color:var(--sub);padding-left:18px;margin-top:8px;line-height:1.85;"><li>Sell Products per TripFactory's pricing and guidelines</li><li>Log all leads and bookings in CRM within 24 hours</li><li>Monthly sales report by 5th of each month</li><li>12-month Business Plan within 60 days of Effective Date</li><li>Quarterly Business Reviews with assigned BDM</li><li>Meet Minimum Sales Targets for your tier</li></ul></div>
-      <div class="card"><div class="ct">⚖️ Compliance</div><ul style="font-size:13px;color:var(--sub);padding-left:18px;margin-top:8px;line-height:1.85;"><li>Hold all required travel agent licences (IATA / TAAI / TAFI)</li><li>Comply with DPDPA 2023 — full customer data protection</li><li>GST registration where turnover exceeds ₹20 Lakhs</li><li>Travel insurance mandatory — advise all Customers</li><li>All customer payments via TripFactory approved channels only</li><li>Complete Trip-Ed Induction before processing any booking</li></ul></div>
+      <div class="card"><div class="ct">&#128202; Sales &amp; Reporting</div><ul style="font-size:13px;color:var(--sub);padding-left:18px;margin-top:8px;line-height:1.9;"><li>Sell Products per TripFactory&#8217;s pricing and guidelines</li><li>Log all leads and bookings in CRM within 24 hours</li><li>Monthly sales report by 5th of each month</li><li>12-month Business Plan within 60 days of Effective Date</li><li>Quarterly Business Reviews with assigned BDM</li><li>Meet Minimum Sales Targets for your tier</li></ul></div>
+      <div class="card"><div class="ct">&#9878;&#65039; Compliance</div><ul style="font-size:13px;color:var(--sub);padding-left:18px;margin-top:8px;line-height:1.9;"><li>Hold all required travel agent licences (IATA / TAAI / TAFI)</li><li>Comply with DPDPA 2023 &#8212; full customer data protection</li><li>GST registration where turnover exceeds &#8377;20 Lakhs</li><li>Travel insurance mandatory &#8212; advise all Customers</li><li>All customer payments via TripFactory approved channels only</li><li>Complete Trip-Ed Induction before processing any booking</li></ul></div>
     </div>
     <div class="sl">Termination Triggers</div>
-    <div class="callout alert"><div class="ch">⚡ Immediate Termination — TripFactory may terminate without notice for:</div><p>Fraud or misrepresentation · Payment default or retention of customer funds · Mis-selling · Data protection breach · Repeated Credit Facility Default Events · Criminal conviction · Insolvency · Any act bringing TripFactory into disrepute</p></div>
-    <div class="callout warn"><div class="ch">📩 90-Day Notice Termination — Either party may exit by giving:</div><p>90 days' written notice at any time. A Termination Fee (equal to remaining monthly platform fees) is payable by the PSA on voluntary early exit during the Initial Term.</p></div>
+    <div class="callout alert"><div class="ch">&#9889; Immediate Termination &#8212; TripFactory may terminate without notice for:</div><p>Fraud or misrepresentation &#183; Payment default or retention of customer funds &#183; Mis-selling &#183; Data protection breach &#183; Repeated Credit Facility Default Events &#183; Criminal conviction &#183; Insolvency &#183; Any act bringing TripFactory into disrepute</p></div>
+    <div class="callout warn"><div class="ch">&#128233; 90-Day Notice Termination &#8212; Either party may exit by giving:</div><p>90 days&#8217; written notice at any time. A Termination Fee (equal to remaining monthly platform fees) is payable by the PSA on voluntary early exit during the Initial Term.</p></div>
     <div class="sl" style="margin-top:28px;">Post-Termination Obligations</div>
     <div class="g3">
-      <div class="card"><div class="ci">🚫</div><div class="ct">Non-Compete — 12 Months</div><div class="cb">Cannot approach TripFactory Customers for competing travel products for 12 months after termination.</div></div>
-      <div class="card"><div class="ci">👥</div><div class="ct">Non-Solicitation — 12 Months</div><div class="cb">Cannot recruit TripFactory staff or other PSA Partners for 12 months post-termination.</div></div>
-      <div class="card"><div class="ci">🗑️</div><div class="ct">Brand Removal — 7 Days</div><div class="cb">All TripFactory branding must be removed from all digital and physical channels within 7 days of termination.</div></div>
+      <div class="card"><div class="ci">&#128683;</div><div class="ct">Non-Compete &#8212; 12 Months</div><div class="cb">Cannot approach TripFactory Customers for competing travel products for 12 months after termination.</div></div>
+      <div class="card"><div class="ci">&#128101;</div><div class="ct">Non-Solicitation &#8212; 12 Months</div><div class="cb">Cannot recruit TripFactory staff or other PSA Partners for 12 months post-termination.</div></div>
+      <div class="card"><div class="ci">&#128465;&#65039;</div><div class="ct">Brand Removal &#8212; 7 Days</div><div class="cb">All TripFactory branding must be removed from all digital and physical channels within 7 days of termination.</div></div>
     </div>
   </div>
 </div>
-
-<!-- ════════ TIERS & COMMISSION ════════ -->
 <div id="section-tiers" class="hub-section">
   <div class="pw">
     <div class="sl" style="margin-top:8px;">The Three PSA Tiers</div>
     <div class="tier-g">
       <div class="tier-card">
-        <div class="tier-hdr t1"><div class="tier-badge">Tier 1</div><div class="tier-name">Starter Partner</div><div class="tier-tgt">1–3 years in travel · building client base</div></div>
+        <div class="tier-hdr t1"><div class="tier-badge">Tier 1</div><div class="tier-name">Starter Partner</div><div class="tier-tgt">1&#8211;3 years in travel &#183; building client base</div></div>
         <div class="tier-body">
-          <div class="tr"><span class="trl">Min Annual Gross Sales</span><span class="trv">₹50 Lakhs</span></div>
+          <div class="tr"><span class="trl">Min Annual Gross Sales</span><span class="trv">&#8377;50 Lakhs</span></div>
           <div class="tr"><span class="trl">Commission on Gross Profit</span><span class="trv big">60%</span></div>
-          <div class="tr"><span class="trl">Onboarding Fee</span><span class="trv">₹25,000 + GST</span></div>
-          <div class="tr"><span class="trl">Monthly Platform Fee</span><span class="trv">₹2,000 + GST</span></div>
+          <div class="tr"><span class="trl">Onboarding Fee</span><span class="trv">&#8377;25,000 + GST</span></div>
+          <div class="tr"><span class="trl">Monthly Platform Fee</span><span class="trv">&#8377;2,000 + GST</span></div>
           <div class="tr"><span class="trl">BDM Support</span><span class="trv">Shared BDM</span></div>
-          <div class="tr"><span class="trl">Recommended Min Deposit (Credit)</span><span class="trv">₹50,000</span></div>
-          <div class="tr"><span class="trl">Resulting Credit Limit</span><span class="trv">₹2,00,000</span></div>
+          <div class="tr"><span class="trl">Recommended Min Deposit</span><span class="trv">&#8377;50,000</span></div>
+          <div class="tr"><span class="trl">Resulting Credit Limit (4&#215;)</span><span class="trv">&#8377;2,00,000</span></div>
           <div class="tr"><span class="trl">Fam Trip Eligibility</span><span class="trv">From Year 2</span></div>
-          <div class="tr"><span class="trl">Advance to Tier 2 at</span><span class="trv">₹1.5 Crore / year</span></div>
+          <div class="tr"><span class="trl">Advance to Tier 2 at</span><span class="trv">&#8377;1.5 Crore / year</span></div>
         </div>
       </div>
       <div class="tier-card">
-        <div class="tier-hdr t2"><div class="tier-badge">Tier 2</div><div class="tier-name">Growth Partner</div><div class="tier-tgt">3–5 years · 200–500 pax/yr · scaling</div></div>
+        <div class="tier-hdr t2"><div class="tier-badge">Tier 2</div><div class="tier-name">Growth Partner</div><div class="tier-tgt">3&#8211;5 years &#183; 200&#8211;500 pax/yr &#183; scaling</div></div>
         <div class="tier-body">
-          <div class="tr"><span class="trl">Min Annual Gross Sales</span><span class="trv">₹1.5 Crore</span></div>
+          <div class="tr"><span class="trl">Min Annual Gross Sales</span><span class="trv">&#8377;1.5 Crore</span></div>
           <div class="tr"><span class="trl">Commission on Gross Profit</span><span class="trv big">65%</span></div>
-          <div class="tr"><span class="trl">Onboarding Fee</span><span class="trv">₹40,000 + GST</span></div>
-          <div class="tr"><span class="trl">Monthly Platform Fee</span><span class="trv">₹3,500 + GST</span></div>
+          <div class="tr"><span class="trl">Onboarding Fee</span><span class="trv">&#8377;40,000 + GST</span></div>
+          <div class="tr"><span class="trl">Monthly Platform Fee</span><span class="trv">&#8377;3,500 + GST</span></div>
           <div class="tr"><span class="trl">BDM Support</span><span class="trv">Named BDM (dedicated)</span></div>
-          <div class="tr"><span class="trl">Recommended Min Deposit (Credit)</span><span class="trv">₹1,00,000</span></div>
-          <div class="tr"><span class="trl">Resulting Credit Limit</span><span class="trv">₹4,00,000</span></div>
+          <div class="tr"><span class="trl">Recommended Min Deposit</span><span class="trv">&#8377;1,00,000</span></div>
+          <div class="tr"><span class="trl">Resulting Credit Limit (4&#215;)</span><span class="trv">&#8377;4,00,000</span></div>
           <div class="tr"><span class="trl">Fam Trip Eligibility</span><span class="trv">From Year 2</span></div>
-          <div class="tr"><span class="trl">Advance to Tier 3 at</span><span class="trv">₹3 Crore / year</span></div>
+          <div class="tr"><span class="trl">Advance to Tier 3 at</span><span class="trv">&#8377;3 Crore / year</span></div>
         </div>
       </div>
       <div class="tier-card">
-        <div class="tier-hdr t3"><div class="tier-badge">Tier 3</div><div class="tier-name">Senior Partner</div><div class="tier-tgt">5+ years · 500+ pax/yr · high volume</div></div>
+        <div class="tier-hdr t3"><div class="tier-badge">Tier 3</div><div class="tier-name">Senior Partner</div><div class="tier-tgt">5+ years &#183; 500+ pax/yr &#183; high volume</div></div>
         <div class="tier-body">
-          <div class="tr"><span class="trl">Min Annual Gross Sales</span><span class="trv">₹3 Crore+</span></div>
+          <div class="tr"><span class="trl">Min Annual Gross Sales</span><span class="trv">&#8377;3 Crore+</span></div>
           <div class="tr"><span class="trl">Commission on Gross Profit</span><span class="trv big">70%</span></div>
-          <div class="tr"><span class="trl">Onboarding Fee</span><span class="trv">₹60,000 + GST</span></div>
-          <div class="tr"><span class="trl">Monthly Platform Fee</span><span class="trv">₹5,000 + GST</span></div>
+          <div class="tr"><span class="trl">Onboarding Fee</span><span class="trv">&#8377;60,000 + GST</span></div>
+          <div class="tr"><span class="trl">Monthly Platform Fee</span><span class="trv">&#8377;5,000 + GST</span></div>
           <div class="tr"><span class="trl">BDM Support</span><span class="trv">Named Senior BDM</span></div>
-          <div class="tr"><span class="trl">Recommended Min Deposit (Credit)</span><span class="trv">₹2,50,000</span></div>
-          <div class="tr"><span class="trl">Resulting Credit Limit</span><span class="trv">₹10,00,000</span></div>
+          <div class="tr"><span class="trl">Recommended Min Deposit</span><span class="trv">&#8377;2,50,000</span></div>
+          <div class="tr"><span class="trl">Resulting Credit Limit (4&#215;)</span><span class="trv">&#8377;10,00,000</span></div>
           <div class="tr"><span class="trl">Fam Trip Eligibility</span><span class="trv">From Year 1</span></div>
-          <div class="tr"><span class="trl">Maintain by achieving</span><span class="trv">₹3 Crore+ / year</span></div>
+          <div class="tr"><span class="trl">Maintain by achieving</span><span class="trv">&#8377;3 Crore+ / year</span></div>
         </div>
       </div>
     </div>
-
     <div class="sl">Commission Payment Models</div>
     <div class="model-g">
       <div class="model-card">
-        <div class="model-hdr ma"><div class="model-title">Model A — Split Commission</div><div class="model-sub">50% on deposit · 50% after departure · paid 15th &amp; 30th each month</div></div>
+        <div class="model-hdr ma"><div class="model-title">Model A &#8212; Split Commission</div><div class="model-sub">50% on deposit &#183; 50% after departure &#183; paid 15th &amp; 30th each month</div></div>
         <div class="model-body">
-          <div class="step ma"><div class="sn">1</div><div class="st"><strong>Customer pays deposit →</strong> TripFactory receives it → 50% of your total Commission paid on the next 15th or 30th.</div></div>
-          <div class="step ma"><div class="sn">2</div><div class="st"><strong>Customer departs →</strong> Remaining 50% paid on the next 15th or 30th after departure date.</div></div>
-          <div class="step ma"><div class="sn">3</div><div class="st">Statements issued on 14th and 29th of each month. All payments by NEFT/RTGS. TDS deducted under Section 194H.</div></div>
-          <div class="ex-box">
-            <div class="ex-t">Worked Example</div>
-            <div class="ex-r"><span class="ex-l">Total Commission on booking</span><span class="ex-v">₹12,000</span></div>
-            <div class="ex-r"><span class="ex-l">Deposit received 1 March</span><span class="ex-v">₹6,000 → paid 15 March</span></div>
-            <div class="ex-r"><span class="ex-l">Customer departs 20 April</span><span class="ex-v">₹6,000 → paid 30 April</span></div>
+          <div class="step ma"><div class="sn">1</div><div class="st"><strong>Customer pays deposit</strong> &#8594; TripFactory receives it &#8594; 50% of your total Commission paid on the next 15th or 30th.</div></div>
+          <div class="step ma"><div class="sn">2</div><div class="st"><strong>Customer departs</strong> &#8594; Remaining 50% paid on the next 15th or 30th after departure date.</div></div>
+          <div class="step ma"><div class="sn">3</div><div class="st">Statements issued on 14th and 29th each month. All payments by NEFT/RTGS. TDS deducted under Section 194H.</div></div>
+          <div class="ex-box"><div class="ex-t">Worked Example</div>
+            <div class="ex-r"><span class="ex-l">Total Commission on booking</span><span class="ex-v">&#8377;12,000</span></div>
+            <div class="ex-r"><span class="ex-l">Deposit received 1 March</span><span class="ex-v">&#8377;6,000 &#8594; paid 15 March</span></div>
+            <div class="ex-r"><span class="ex-l">Customer departs 20 April</span><span class="ex-v">&#8377;6,000 &#8594; paid 30 April</span></div>
           </div>
-          <div class="callout tip" style="margin-top:12px;"><div class="ch">Best suited to</div><p>PSAs with strong deposit collection wanting early Commission flow on each booking confirmed.</p></div>
+          <div class="callout tip" style="margin-top:12px;"><div class="ch">Best suited to</div><p>PSAs with strong deposit collection wanting early Commission flow on each booking.</p></div>
         </div>
       </div>
       <div class="model-card">
-        <div class="model-hdr mb"><div class="model-title">Model B — Proportional Commission</div><div class="model-sub">Commission mirrors Customer payment receipts · paid 15th &amp; 30th each month</div></div>
+        <div class="model-hdr mb"><div class="model-title">Model B &#8212; Proportional Commission</div><div class="model-sub">Commission mirrors Customer payment receipts &#183; paid 15th &amp; 30th each month</div></div>
         <div class="model-body">
-          <div class="step mb"><div class="sn">1</div><div class="st"><strong>Customer pays deposit (e.g. 30%) →</strong> you receive 30% of total Commission on next 15th or 30th.</div></div>
-          <div class="step mb"><div class="sn">2</div><div class="st"><strong>Customer pays balance →</strong> remaining Commission paid on next 15th or 30th after balance received by TripFactory.</div></div>
+          <div class="step mb"><div class="sn">1</div><div class="st"><strong>Customer pays deposit (e.g. 30%)</strong> &#8594; you receive 30% of total Commission on next 15th or 30th.</div></div>
+          <div class="step mb"><div class="sn">2</div><div class="st"><strong>Customer pays balance</strong> &#8594; remaining Commission paid on next 15th or 30th after balance received by TripFactory.</div></div>
           <div class="step mb"><div class="sn">3</div><div class="st">Full upfront payment = full Commission in one payment on the next scheduled date.</div></div>
-          <div class="ex-box">
-            <div class="ex-t">Worked Example</div>
-            <div class="ex-r"><span class="ex-l">Package ₹1,00,000 · Commission ₹18,000</span><span class="ex-v"></span></div>
-            <div class="ex-r"><span class="ex-l">30% deposit received 5 March</span><span class="ex-v">₹5,400 → paid 15 March</span></div>
-            <div class="ex-r"><span class="ex-l">Balance received 10 April</span><span class="ex-v">₹12,600 → paid 15 April</span></div>
+          <div class="ex-box"><div class="ex-t">Worked Example</div>
+            <div class="ex-r"><span class="ex-l">Package &#8377;1,00,000 &#183; Commission &#8377;18,000</span><span class="ex-v"></span></div>
+            <div class="ex-r"><span class="ex-l">30% deposit received 5 March</span><span class="ex-v">&#8377;5,400 &#8594; paid 15 March</span></div>
+            <div class="ex-r"><span class="ex-l">Balance received 10 April</span><span class="ex-v">&#8377;12,600 &#8594; paid 15 April</span></div>
           </div>
           <div class="callout tip" style="margin-top:12px;"><div class="ch">Best suited to</div><p>PSAs collecting staged Customer payments who want Commission to mirror actual cashflow received.</p></div>
         </div>
       </div>
     </div>
-
     <div class="sl">Credit Facility</div>
     <div class="credit">
       <div class="cr-l">
-        <h2>4× Your Security Deposit</h2>
-        <p>Lodge a Security Deposit with TripFactory and access a Credit Limit equal to 4 times that amount. Confirm bookings as soon as the Customer's deposit arrives — without waiting for their full balance payment.</p>
+        <h2>4&#215; Your Security Deposit</h2>
+        <p>Lodge a Security Deposit with TripFactory and access a Credit Limit equal to 4 times that amount. Confirm bookings as soon as the Customer&#8217;s deposit arrives &#8212; without waiting for their full balance payment.</p>
         <div class="cr-formula">
-          <div class="cf-p"><div class="cf-n">₹X</div><div class="cf-l">Security Deposit</div></div>
-          <div class="cf-op">×</div>
+          <div class="cf-p"><div class="cf-n">&#8377;X</div><div class="cf-l">Security Deposit</div></div>
+          <div class="cf-op">&#215;</div>
           <div class="cf-p"><div class="cf-n" style="color:var(--gold)">4</div><div class="cf-l">Multiplier</div></div>
           <div class="cf-op">=</div>
-          <div class="cf-p"><div class="cf-n" style="color:#4ade80">₹4X</div><div class="cf-l">Credit Limit</div></div>
+          <div class="cf-p"><div class="cf-n" style="color:#4ade80">&#8377;4X</div><div class="cf-l">Credit Limit</div></div>
         </div>
       </div>
       <div>
         <div style="font-size:11px;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.8px;margin-bottom:10px;">Examples</div>
         <div class="cr-egs">
-          <div class="cr-eg"><div class="cr-eg-d">Deposit <strong>₹50,000</strong></div><div class="cr-eg-arrow">→</div><div class="cr-eg-lim">₹2,00,000 limit</div></div>
-          <div class="cr-eg"><div class="cr-eg-d">Deposit <strong>₹1,00,000</strong></div><div class="cr-eg-arrow">→</div><div class="cr-eg-lim">₹4,00,000 limit</div></div>
-          <div class="cr-eg"><div class="cr-eg-d">Deposit <strong>₹2,50,000</strong></div><div class="cr-eg-arrow">→</div><div class="cr-eg-lim">₹10,00,000 limit</div></div>
+          <div class="cr-eg"><div class="cr-eg-d">Deposit <strong>&#8377;50,000</strong></div><div class="cr-eg-arrow">&#8594;</div><div class="cr-eg-lim">&#8377;2,00,000 limit</div></div>
+          <div class="cr-eg"><div class="cr-eg-d">Deposit <strong>&#8377;1,00,000</strong></div><div class="cr-eg-arrow">&#8594;</div><div class="cr-eg-lim">&#8377;4,00,000 limit</div></div>
+          <div class="cr-eg"><div class="cr-eg-d">Deposit <strong>&#8377;2,50,000</strong></div><div class="cr-eg-arrow">&#8594;</div><div class="cr-eg-lim">&#8377;10,00,000 limit</div></div>
         </div>
-        <div class="cr-note">⚠ The Credit Facility is not a loan. You remain solely responsible for collecting and remitting all Customer balances to TripFactory by the due date.</div>
+        <div class="cr-note">&#9888; The Credit Facility is not a loan. You remain solely responsible for collecting and remitting all Customer balances to TripFactory by the due date.</div>
       </div>
     </div>
   </div>
 </div>
-
-<!-- ════════ POLICIES ════════ -->
 <div id="section-policies" class="hub-section">
   <div class="pw">
-    <div class="sl" style="margin-top:8px;">PSA Policy Pack v2.0 — All 11 Policies</div>
-    <div class="callout tip" style="margin-bottom:22px;"><div class="ch">How to use these policies</div><p>Click any policy to expand its full content. All 11 policies are incorporated by reference into the PSA Agreement v2.0. TripFactory may update any policy with 30 days' written notice.</p></div>
+    <div class="sl" style="margin-top:8px;">PSA Policy Pack v2.0 &#8212; All 11 Policies</div>
+    <div class="callout tip" style="margin-bottom:22px;"><div class="ch">How to use</div><p>Click any policy to expand its full content. All 11 policies are incorporated by reference into the PSA Agreement v2.0. TripFactory may update any policy with 30 days&#8217; written notice.</p></div>
     <div class="p-list" id="plist"></div>
   </div>
 </div>
-
-<!-- ════════ TRIP-ED ════════ -->
 <div id="section-tripped" class="hub-section">
   <div id="tripped-root"></div>
 </div>
-
-<!-- ════════ LEGAL REVIEW ════════ -->
 <div id="section-legal" class="hub-section">
   <div class="pw">
     <div class="sl" style="margin-top:8px;">Hoshiarpur Franchise (2022) vs PSA v2.0 (2026)</div>
-    <div class="callout warn" style="margin-bottom:24px;"><div class="ch">⚖️ Privileged &amp; Confidential — Internal Use Only</div><p>This comparison is prepared for internal planning purposes. It does not constitute legal advice. Recommended amendments must be reviewed by qualified Indian legal counsel before implementation.</p></div>
-
+    <div class="callout warn" style="margin-bottom:24px;"><div class="ch">&#9878;&#65039; Privileged &amp; Confidential &#8212; Internal Use Only</div><p>This comparison is prepared for internal planning purposes. It does not constitute legal advice. Recommended amendments must be reviewed by qualified Indian legal counsel before implementation.</p></div>
     <div class="sl">Structural Model Comparison</div>
     <div class="cmp-g">
       <div class="cmp-card">
-        <div class="cmp-hdr hosh"><h3>Hoshiarpur Franchise Agreement</h3><p>ORN Vacations · Sanchit Jain · 10 January 2022</p></div>
+        <div class="cmp-hdr hosh"><h3>Hoshiarpur Franchise Agreement</h3><p>ORN Vacations &#183; Sanchit Jain &#183; 10 January 2022</p></div>
         <div class="cmp-body">
           <div class="cmp-r"><span class="cmp-lbl">Partner Type</span><span class="cmp-val">Investor / local facilitator</span></div>
           <div class="cmp-r"><span class="cmp-lbl">Who Runs Business</span><span class="cmp-val">TripFactory operates the store</span></div>
-          <div class="cmp-r"><span class="cmp-lbl">Payment Direction</span><span class="cmp-val">TF pays franchisee ₹40k/month</span></div>
+          <div class="cmp-r"><span class="cmp-lbl">Payment Direction</span><span class="cmp-val">TF pays franchisee &#8377;40k/month</span></div>
           <div class="cmp-r"><span class="cmp-lbl">Commission</span><span class="cmp-val worse">0.25% of total turnover</span></div>
-          <div class="cmp-r"><span class="cmp-lbl">Security Deposit</span><span class="cmp-val worse">₹25 Lakhs — mandatory upfront</span></div>
+          <div class="cmp-r"><span class="cmp-lbl">Security Deposit</span><span class="cmp-val worse">&#8377;25 Lakhs &#8212; mandatory upfront</span></div>
           <div class="cmp-r"><span class="cmp-lbl">Term</span><span class="cmp-val">5 years + 5-year lock-in</span></div>
           <div class="cmp-r"><span class="cmp-lbl">Non-Solicitation</span><span class="cmp-val">5 years post-termination</span></div>
           <div class="cmp-r"><span class="cmp-lbl">Training Obligations</span><span class="cmp-val worse">None specified</span></div>
@@ -694,190 +593,91 @@ a{color:inherit;text-decoration:none;}
         </div>
       </div>
       <div class="cmp-card">
-        <div class="cmp-hdr psa"><h3>PSA Agreement v2.0</h3><p>TripFactory · Independent Travel Agent · 2026</p></div>
+        <div class="cmp-hdr psa"><h3>PSA Agreement v2.0</h3><p>TripFactory &#183; Independent Travel Agent &#183; 2026</p></div>
         <div class="cmp-body">
           <div class="cmp-r"><span class="cmp-lbl">Partner Type</span><span class="cmp-val better">Independent travel agent / agency</span></div>
           <div class="cmp-r"><span class="cmp-lbl">Who Runs Business</span><span class="cmp-val better">PSA runs own business independently</span></div>
-          <div class="cmp-r"><span class="cmp-lbl">Payment Direction</span><span class="cmp-val">PSA pays TF ₹2k–5k/month</span></div>
-          <div class="cmp-r"><span class="cmp-lbl">Commission</span><span class="cmp-val better">60–70% of Gross Profit</span></div>
-          <div class="cmp-r"><span class="cmp-lbl">Security Deposit</span><span class="cmp-val better">Optional — for Credit Facility only</span></div>
-          <div class="cmp-r"><span class="cmp-lbl">Term</span><span class="cmp-val better">3 years · 90-day exit notice</span></div>
+          <div class="cmp-r"><span class="cmp-lbl">Payment Direction</span><span class="cmp-val">PSA pays TF &#8377;2k&#8211;5k/month</span></div>
+          <div class="cmp-r"><span class="cmp-lbl">Commission</span><span class="cmp-val better">60&#8211;70% of Gross Profit</span></div>
+          <div class="cmp-r"><span class="cmp-lbl">Security Deposit</span><span class="cmp-val better">Optional &#8212; for Credit Facility only</span></div>
+          <div class="cmp-r"><span class="cmp-lbl">Term</span><span class="cmp-val better">3 years &#183; 90-day exit notice</span></div>
           <div class="cmp-r"><span class="cmp-lbl">Non-Solicitation</span><span class="cmp-val worse">12 months only (see Amendment 2)</span></div>
           <div class="cmp-r"><span class="cmp-lbl">Training Obligations</span><span class="cmp-val better">Mandatory Trip-Ed programme</span></div>
           <div class="cmp-r"><span class="cmp-lbl">Data Protection</span><span class="cmp-val better">Full DPDPA 2023 compliance</span></div>
-          <div class="cmp-r"><span class="cmp-lbl">Arbitrator</span><span class="cmp-val better">Mutually agreed — fairer</span></div>
+          <div class="cmp-r"><span class="cmp-lbl">Arbitrator</span><span class="cmp-val better">Mutually agreed &#8212; fairer</span></div>
           <div class="cmp-r"><span class="cmp-lbl">GST Provisions</span><span class="cmp-val better">Full GST compliance policy</span></div>
         </div>
       </div>
     </div>
-
     <div class="sl">Coverage Summary</div>
     <div class="cov-g">
-      <div class="cov-card" style="background:#f0fdf4;border-color:#86efac;"><div class="cov-n">✅</div><div class="cov-t" style="color:#166534;">29 Clauses Covered</div><div class="cov-s">Fully addressed in PSA v2.0</div></div>
-      <div class="cov-card" style="background:rgba(204,51,0,.05);border-color:#fca5a5;"><div class="cov-n">❌</div><div class="cov-t" style="color:#991b1b;">5 Gaps Identified</div><div class="cov-s">Hoshiarpur provisions missing from PSA v2.0</div></div>
-      <div class="cov-card" style="background:#eff6ff;border-color:#93c5fd;"><div class="cov-n">🆕</div><div class="cov-t" style="color:#1e40af;">8 New Features</div><div class="cov-s">Major provisions in PSA v2.0 not in Hoshiarpur</div></div>
+      <div class="cov-card" style="background:#f0fdf4;border-color:#86efac;"><div class="cov-n">&#10003;</div><div class="cov-t" style="color:#166534;">29 Clauses Covered</div><div class="cov-s">Fully addressed in PSA v2.0</div></div>
+      <div class="cov-card" style="background:rgba(204,51,0,.05);border-color:#fca5a5;"><div class="cov-n">&#10007;</div><div class="cov-t" style="color:#991b1b;">5 Gaps Identified</div><div class="cov-s">Hoshiarpur provisions missing from PSA v2.0</div></div>
+      <div class="cov-card" style="background:#eff6ff;border-color:#93c5fd;"><div class="cov-n">&#127381;</div><div class="cov-t" style="color:#1e40af;">8 New Features</div><div class="cov-s">Major provisions in PSA v2.0 not in Hoshiarpur</div></div>
     </div>
-
     <div class="sl">Recommended Amendments</div>
     <table class="amend-table">
       <thead><tr><th>#</th><th>Amendment</th><th>Priority</th><th>Current Position</th><th>Recommended Change</th></tr></thead>
       <tbody>
-        <tr><td><strong>1</strong></td><td><strong>Add 12-Month Minimum Initial Period</strong><br><small style="color:var(--sub)">Clause 3.1</small></td><td><span class="badge b-hi">HIGH</span></td><td>PSA can exit on 90 days' notice from Day 1</td><td>Prohibit exit in first 12 months except for TripFactory's material breach. Protects TripFactory's onboarding investment in each PSA.</td></tr>
-        <tr><td><strong>2</strong></td><td><strong>Extend Non-Solicitation to 24 Months</strong><br><small style="color:var(--sub)">Clause 19.2</small></td><td><span class="badge b-hi">HIGH</span></td><td>12 months only post-termination</td><td>Increase to 24 months. Hoshiarpur has 5 years (too long). 24 months provides meaningful protection for TripFactory's customer relationships.</td></tr>
-        <tr><td><strong>3</strong></td><td><strong>Arbitrator — Already Improved ✅</strong><br><small style="color:var(--sub)">Clause 23.3</small></td><td><span class="badge b-in">INFO</span></td><td>Mutually agreed — already correct</td><td>No change needed. PSA v2.0 already improves on Hoshiarpur's company-appointed arbitrator. Retain current wording.</td></tr>
-        <tr><td><strong>4</strong></td><td><strong>Add Cross-Default Clause</strong><br><small style="color:var(--sub)">New Clause 25.10</small></td><td><span class="badge b-md">MEDIUM</span></td><td>Not present in PSA v2.0</td><td>Add: breach of any other TripFactory agreement by the PSA = breach of this Agreement. Important where PSAs hold multiple TripFactory agreements.</td></tr>
-        <tr><td><strong>5</strong></td><td><strong>Add LOI / Prior Agreement Carve-out</strong><br><small style="color:var(--sub)">Amend Clause 25.1</small></td><td><span class="badge b-md">MEDIUM</span></td><td>Entire agreement clause supersedes all prior communications</td><td>Add carve-out: signed LOI expressly stated to survive is incorporated by reference. Prevents inadvertently voiding LOI commitments.</td></tr>
+        <tr><td><strong>1</strong></td><td><strong>Add 12-Month Minimum Initial Period</strong><br><small style="color:var(--sub)">Clause 3.1</small></td><td><span class="badge b-hi">HIGH</span></td><td>PSA can exit on 90 days&#8217; notice from Day 1</td><td>Prohibit exit in first 12 months except for TripFactory&#8217;s material breach. Protects TripFactory&#8217;s onboarding investment.</td></tr>
+        <tr><td><strong>2</strong></td><td><strong>Extend Non-Solicitation to 24 Months</strong><br><small style="color:var(--sub)">Clause 19.2</small></td><td><span class="badge b-hi">HIGH</span></td><td>12 months only post-termination</td><td>Increase to 24 months. Provides meaningful protection for TripFactory&#8217;s customer relationships.</td></tr>
+        <tr><td><strong>3</strong></td><td><strong>Arbitrator &#8212; Already Improved &#10003;</strong><br><small style="color:var(--sub)">Clause 23.3</small></td><td><span class="badge b-in">INFO</span></td><td>Mutually agreed &#8212; already correct</td><td>No change needed. PSA v2.0 already improves on Hoshiarpur&#8217;s company-appointed arbitrator. Retain current wording.</td></tr>
+        <tr><td><strong>4</strong></td><td><strong>Add Cross-Default Clause</strong><br><small style="color:var(--sub)">New Clause 25.10</small></td><td><span class="badge b-md">MEDIUM</span></td><td>Not present in PSA v2.0</td><td>Add: breach of any other TripFactory agreement by the PSA = breach of this Agreement.</td></tr>
+        <tr><td><strong>5</strong></td><td><strong>Add LOI / Prior Agreement Carve-out</strong><br><small style="color:var(--sub)">Amend Clause 25.1</small></td><td><span class="badge b-md">MEDIUM</span></td><td>Entire agreement clause supersedes all prior communications</td><td>Add carve-out: signed LOI expressly stated to survive is incorporated by reference.</td></tr>
         <tr><td><strong>6</strong></td><td><strong>Add Mutual Representations &amp; Warranties</strong><br><small style="color:var(--sub)">New Clause 8</small></td><td><span class="badge b-md">MEDIUM</span></td><td>No dedicated warranties clause</td><td>Add explicit mutual warranties: legal capacity, licences held, no conflicting obligations, no undisclosed litigation, no insolvency proceedings.</td></tr>
-        <tr><td><strong>7</strong></td><td><strong>Clarify App / PIN Code Commission</strong><br><small style="color:var(--sub)">Clause 6.1 or Schedule A</small></td><td><span class="badge b-lo">LOW</span></td><td>Not addressed in PSA v2.0</td><td>Clarify whether TripFactory's territory/PIN code attribution model applies to PSAs. If retired, add Schedule A note to prevent future claims.</td></tr>
-        <tr><td><strong>8</strong></td><td><strong>Stamp Duty Reference Table by State</strong><br><small style="color:var(--sub)">Internal process</small></td><td><span class="badge b-lo">LOW</span></td><td>Clause 25.7 says "adequate value" — correct but vague</td><td>Create internal state-by-state Stamp Duty table. Under-stamping renders the agreement inadmissible as court evidence.</td></tr>
+        <tr><td><strong>7</strong></td><td><strong>Clarify App / PIN Code Commission</strong><br><small style="color:var(--sub)">Clause 6.1 or Schedule A</small></td><td><span class="badge b-lo">LOW</span></td><td>Not addressed in PSA v2.0</td><td>Clarify whether TripFactory&#8217;s territory/PIN code attribution model applies. If retired, add Schedule A note to prevent future claims.</td></tr>
+        <tr><td><strong>8</strong></td><td><strong>Stamp Duty Reference Table by State</strong><br><small style="color:var(--sub)">Internal process</small></td><td><span class="badge b-lo">LOW</span></td><td>Clause 25.7 says &#8220;adequate value&#8221; &#8212; correct but vague</td><td>Create internal state-by-state Stamp Duty table. Under-stamping renders the agreement inadmissible as court evidence.</td></tr>
       </tbody>
     </table>
   </div>
 </div>
-
-<!-- ════════ DOWNLOADS ════════ -->
 <div id="section-downloads" class="hub-section">
   <div class="pw">
     <div class="sl" style="margin-top:8px;">Agreements</div>
     <div class="dl-g">
       <div class="dl-card">
-        <div class="dl-icon w">📄</div>
+        <div class="dl-icon w">&#128196;</div>
         <div class="dl-info">
           <div class="dl-title">PSA Agreement v2.0</div>
-          <div class="dl-sub">Preferred Sales Agent Agreement — India · 26 Clauses + 5 Schedules · Version 2.0 · 2026</div>
-          <a class="dl-btn" href="PREFERRED_SALES_AGENT_AGREEMENT_V2.docx" download>⬇ Download Word</a>
+          <div class="dl-sub">Preferred Sales Agent Agreement &#8212; India &#183; 26 Clauses + 5 Schedules &#183; Version 2.0 &#183; 2026</div>
+          <a class="dl-btn" href="PREFERRED_SALES_AGENT_AGREEMENT_V2.docx" download>&#11015; Download Word</a>
         </div>
       </div>
       <div class="dl-card">
-        <div class="dl-icon w">📋</div>
+        <div class="dl-icon w">&#128203;</div>
         <div class="dl-info">
           <div class="dl-title">PSA Policy Pack v2.0</div>
-          <div class="dl-sub">All 11 Partner Policies — Brand, Pricing, Complaints, Payment, DPDPA, GST, Trip-Ed, Credit Facility · Version 2.0</div>
-          <a class="dl-btn" href="PSA_Policies_Draft_1.docx" download>⬇ Download Word</a>
+          <div class="dl-sub">All 11 Partner Policies &#8212; Brand, Pricing, Complaints, Payment, DPDPA, GST, Trip-Ed, Credit Facility &#183; Version 2.0</div>
+          <a class="dl-btn" href="PSA_Policies_Draft_1.docx" download>&#11015; Download Word</a>
         </div>
       </div>
     </div>
     <div class="sl">Legal Review</div>
     <div class="dl-g">
       <div class="dl-card">
-        <div class="dl-icon l">⚖️</div>
+        <div class="dl-icon l">&#9878;&#65039;</div>
         <div class="dl-info">
-          <div class="dl-title">Hoshiarpur vs PSA v2.0 — Legal Review</div>
-          <div class="dl-sub">Structural comparison · 53-clause coverage table · 8 recommended amendments · Privileged &amp; Confidential</div>
-          <a class="dl-btn" href="TripFactory_Hoshiarpur_vs_PSA_Review.docx" download>⬇ Download Word</a>
+          <div class="dl-title">Hoshiarpur vs PSA v2.0 &#8212; Legal Review</div>
+          <div class="dl-sub">Structural comparison &#183; 53-clause coverage table &#183; 8 recommended amendments &#183; Privileged &amp; Confidential</div>
+          <a class="dl-btn" href="TripFactory_Hoshiarpur_vs_PSA_Review.docx" download>&#11015; Download Word</a>
         </div>
       </div>
       <div class="dl-card">
-        <div class="dl-icon w">🎓</div>
+        <div class="dl-icon w">&#127891;</div>
         <div class="dl-info">
-          <div class="dl-title">Trip-Ed Training Portal</div>
-          <div class="dl-sub">Standalone version of the Trip-Ed training portal — 9 modules, destination content, quizzes, and Knowledge Checks</div>
-          <a class="dl-btn" href="index__1_.html" download>⬇ Download HTML</a>
+          <div class="dl-title">Trip-Ed Training Portal (Standalone)</div>
+          <div class="dl-sub">9 modules, destination content, quizzes, and Knowledge Checks &#8212; standalone HTML version</div>
+          <a class="dl-btn" href="index__1_.html" download>&#11015; Download HTML</a>
         </div>
       </div>
     </div>
-    <div class="callout tip"><div class="ch">GitHub Pages Deployment</div><p>Place all .docx files and the Trip-Ed index.html in the same folder as this index.html in your GitHub repo. All download links use relative paths and will work automatically once deployed.</p></div>
+    <div class="callout tip"><div class="ch">GitHub Pages Deployment</div><p>Place all .docx files and Trip-Ed HTML in the same folder as this index.html in your GitHub repo. All download links use relative paths and will work automatically once deployed to GitHub Pages.</p></div>
   </div>
 </div>
+<!-- Trip-Ed content stored in <template> — browser does not parse or execute until explicitly activated -->
+<template id="tripped-template">
+<div id="tripped-root">
 
-<!-- ════════ SCRIPTS ════════ -->
-<script>
-// ── Hub navigation ──
-function show(id, btn) {
-  document.querySelectorAll('.hub-section').forEach(s => s.classList.remove('active'));
-  document.querySelectorAll('.nav-tab').forEach(b => b.classList.remove('active'));
-  const sec = document.getElementById('section-' + id);
-  if (sec) sec.classList.add('active');
-  if (btn) {
-    btn.classList.add('active');
-  } else {
-    document.querySelectorAll('.nav-tab').forEach(b => {
-      if (b.getAttribute('onclick') && b.getAttribute('onclick').includes("'" + id + "'")) b.classList.add('active');
-    });
-  }
-  window.scrollTo(0,0);
-  if (id === 'tripped') loadTE();
-}
-
-// ── Trip-Ed lazy load ──
-let teLoaded = false;
-function loadTE() {
-  if (teLoaded) return;
-  teLoaded = true;
-  document.getElementById('tripped-root').innerHTML = teBody;
-  // re-run Trip-Ed script
-  const s = document.createElement('script');
-  s.textContent = teScript;
-  document.head.appendChild(s);
-}
-
-const teScript = `
-let done = new Set(['bali']);
-
-const titles = {
-  dashboard:'Dashboard',bali:'Destination — Bali',thailand:'Destination — Thailand',
-  uk:'Destination — United Kingdom',uae:'Destination — UAE',
-  sales:'Skills — Sales & WhatsApp',compliance:'Skills — Compliance & DPDPA',
-  induction:'Getting Started — 3-Day Induction',product:'Getting Started — Product Overview'
-};
-
-function te_showPage(id, btn) {
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  const pg = document.getElementById('pg-'+id);
-  if(pg){ pg.classList.add('active'); pg.scrollIntoView({behavior:'smooth',block:'start'}); }
-  document.querySelectorAll('.sb-item').forEach(b => b.classList.remove('active'));
-  if(btn) btn.classList.add('active');
-  else {
-    document.querySelectorAll('.sb-item').forEach(b => {
-      if(b.getAttribute('onclick') && b.getAttribute('onclick').includes("'"+id+"'")) b.classList.add('active');
-    });
-  }
-  document.getElementById('bc').textContent = titles[id]||id;
-}
-
-function switchTab(btn, paneId) {
-  const bar = btn.closest('.tab-bar');
-  const body = bar.nextElementSibling;
-  bar.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-  body.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
-  btn.classList.add('active');
-  const p = document.getElementById(paneId);
-  if(p) p.classList.add('active');
-}
-
-function tgl(el) {
-  el.classList.toggle('on');
-  el.textContent = el.classList.contains('on') ? '✓' : '';
-}
-
-function ans(el, qId, correct) {
-  const q = document.getElementById(qId);
-  if(q.dataset.done) return;
-  q.dataset.done = '1';
-  q.querySelectorAll('.quiz-opt').forEach(o => o.style.pointerEvents='none');
-  const fb = document.getElementById('fb-'+qId);
-  if(correct){
-    el.classList.add('ok');
-    el.querySelector('.opt-mk').textContent='✓';
-    fb.className='quiz-fb ok'; fb.textContent='✓ Correct!';
-  } else {
-    el.classList.add('bad');
-    el.querySelector('.opt-mk').textContent='✗';
-    fb.className='quiz-fb bad'; fb.textContent='✗ Incorrect — review the content above and look for the correct answer.';
-  }
-  fb.style.display='block';
-}
-
-function complete(mod) {
-  done.add(mod);
-  const n = done.size;
-  document.getElementById('prog-txt').textContent = n + ' / 12 modules';
-  document.getElementById('prog-fill').style.width = Math.min(100,(n/12)*100)+'%';
-  alert('🎉 Module complete! +20 points added to your Trip-Ed score.');
-  te_showPage('dashboard');
-}
-`;
-const teBody   = `
 
 <nav class="sidebar">
   <div class="sb-logo">
@@ -1961,98 +1761,202 @@ function complete(mod) {
   showPage('dashboard');
 }
 </script>
-`;
 
-// ── Policies ──
-const policies = [
-  {n:"01",t:"Brand & Marketing Guidelines",s:"Logo, colours, co-branding, pre-approval requirements",sections:[
+</div>
+</template>
+
+<!-- Trip-Ed script stored in a non-executing script tag -->
+<script id="tripped-script-src" type="text/plain">
+
+let done = new Set(['bali']);
+
+const titles = {
+  dashboard:'Dashboard',bali:'Destination — Bali',thailand:'Destination — Thailand',
+  uk:'Destination — United Kingdom',uae:'Destination — UAE',
+  sales:'Skills — Sales & WhatsApp',compliance:'Skills — Compliance & DPDPA',
+  induction:'Getting Started — 3-Day Induction',product:'Getting Started — Product Overview'
+};
+
+function te_showPage(id, btn) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  const pg = document.getElementById('pg-'+id);
+  if(pg){ pg.classList.add('active'); pg.scrollIntoView({behavior:'smooth',block:'start'}); }
+  document.querySelectorAll('.sb-item').forEach(b => b.classList.remove('active'));
+  if(btn) btn.classList.add('active');
+  else {
+    document.querySelectorAll('.sb-item').forEach(b => {
+      if(b.getAttribute('onclick') && b.getAttribute('onclick').includes("'"+id+"'")) b.classList.add('active');
+    });
+  }
+  document.getElementById('bc').textContent = titles[id]||id;
+}
+
+function switchTab(btn, paneId) {
+  const bar = btn.closest('.tab-bar');
+  const body = bar.nextElementSibling;
+  bar.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  body.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+  btn.classList.add('active');
+  const p = document.getElementById(paneId);
+  if(p) p.classList.add('active');
+}
+
+function tgl(el) {
+  el.classList.toggle('on');
+  el.textContent = el.classList.contains('on') ? '✓' : '';
+}
+
+function ans(el, qId, correct) {
+  const q = document.getElementById(qId);
+  if(q.dataset.done) return;
+  q.dataset.done = '1';
+  q.querySelectorAll('.quiz-opt').forEach(o => o.style.pointerEvents='none');
+  const fb = document.getElementById('fb-'+qId);
+  if(correct){
+    el.classList.add('ok');
+    el.querySelector('.opt-mk').textContent='✓';
+    fb.className='quiz-fb ok'; fb.textContent='✓ Correct!';
+  } else {
+    el.classList.add('bad');
+    el.querySelector('.opt-mk').textContent='✗';
+    fb.className='quiz-fb bad'; fb.textContent='✗ Incorrect — review the content above and look for the correct answer.';
+  }
+  fb.style.display='block';
+}
+
+function complete(mod) {
+  done.add(mod);
+  const n = done.size;
+  document.getElementById('prog-txt').textContent = n + ' / 12 modules';
+  document.getElementById('prog-fill').style.width = Math.min(100,(n/12)*100)+'%';
+  alert('🎉 Module complete! +20 points added to your Trip-Ed score.');
+  te_te_showPage('dashboard');
+}
+
+</script>
+
+<!-- Hub script -->
+<script>
+
+// Hub navigation
+function show(id, btn) {
+  document.querySelectorAll('.hub-section').forEach(function(s){ s.classList.remove('active'); });
+  document.querySelectorAll('.nav-tab').forEach(function(b){ b.classList.remove('active'); });
+  var sec = document.getElementById('section-' + id);
+  if (sec) sec.classList.add('active');
+  if (btn) {
+    btn.classList.add('active');
+  } else {
+    document.querySelectorAll('.nav-tab').forEach(function(b){
+      var oc = b.getAttribute('onclick') || '';
+      if (oc.indexOf("'" + id + "'") > -1) b.classList.add('active');
+    });
+  }
+  window.scrollTo(0,0);
+  if (id === 'tripped') loadTE();
+}
+
+// Trip-Ed: load from hidden <template> element
+var teLoaded = false;
+function loadTE() {
+  if (teLoaded) return;
+  teLoaded = true;
+  var tmpl = document.getElementById('tripped-template');
+  var root = document.getElementById('tripped-root');
+  if (!tmpl || !root) return;
+  root.appendChild(document.importNode(tmpl.content, true));
+  // Run the Trip-Ed script
+  var scr = document.createElement('script');
+  scr.text = document.getElementById('tripped-script-src').textContent;
+  document.head.appendChild(scr);
+}
+
+// Policies accordion
+var policies = [
+  {n:"01",t:"Brand &amp; Marketing Guidelines",s:"Logo, colours, co-branding, pre-approval requirements",sections:[
     {h:"Purpose",b:"Sets out how TripFactory's brand and marketing materials may be used by PSA Partners. Incorrect use may result in immediate removal of brand access and termination of the PSA Agreement."},
-    {h:"Approved PSA Identification",b:'In all materials identify yourself as: <strong>"Authorised TripFactory Preferred Sales Partner"</strong>. Do not use "TripFactory Agent", "TripFactory Branch", or any description implying you are part of TripFactory's corporate structure.'},
+    {h:"Approved PSA Identification",b:"In all materials identify yourself as: <strong>\"Authorised TripFactory Preferred Sales Partner\"</strong>. Do not use \"TripFactory Agent\", \"TripFactory Branch\", or any description implying you are part of TripFactory's corporate structure."},
     {h:"Logo Usage Rules",b:"Use only current approved logo files from the Resource Hub. Do not stretch, rotate, recolour, or alter the logo in any way. Minimum size: 25mm wide in print, 80px on screen."},
-    {h:"Pre-Approval Required For",b:"PSA-created social media posts referencing TripFactory · Paid advertisements · Press releases · Shopfront or vehicle signage. Submit to your BDM at least 5 working days before publication."},
-    {h:"On Termination",b:"Within 7 days: remove all TripFactory branding from all digital channels · delete all brand asset files · confirm removal to TripFactory in writing."}
+    {h:"Pre-Approval Required",b:"PSA-created social media posts using TripFactory brand &middot; Paid advertisements &middot; Press releases &middot; Shopfront or vehicle signage. Submit to your BDM at least 5 working days before publication."},
+    {h:"On Termination",b:"Within 7 days: remove all TripFactory branding from all digital channels &middot; delete all brand asset files &middot; confirm removal to TripFactory in writing."}
   ]},
-  {n:"02",t:"Pricing & Discounting Policy",s:"Price authority, discount approval, prohibited practices",sections:[
+  {n:"02",t:"Pricing &amp; Discounting Policy",s:"Price authority, discount approval, prohibited practices",sections:[
     {h:"The Golden Rule",b:"Always quote from TripFactory's live system or from a confirmed written quote from your BDM. Never quote from memory, from an old quote, or from a competitor's price list."},
     {h:"Pricing Authority",b:"TripFactory retains sole authority over all product pricing. Never alter, inflate, or undercut TripFactory's confirmed prices. Never commit to a price before receiving a confirmed quote from TripFactory."},
-    {h:"Competitor Price Matching",b:"Three steps required: (1) Verify the competitor quote is genuine and truly comparable. (2) Refer to your BDM in writing with full competitor details. (3) Await TripFactory's written approval before committing to the customer. Never match unilaterally."},
-    {h:"Prohibited Practices",b:"Charging above TripFactory's confirmed price and retaining the difference · Offering unsanctioned discounts · Accepting cash at non-confirmed prices · Splitting bookings to generate duplicate Commission. All are grounds for immediate termination."}
+    {h:"Competitor Price Matching",b:"Three steps required: (1) Verify the competitor quote is genuine and truly comparable. (2) Refer to your BDM in writing with full competitor details. (3) Await TripFactory's written approval before committing to the customer."},
+    {h:"Prohibited Practices",b:"Charging above TripFactory's confirmed price and retaining the difference &middot; Offering unsanctioned discounts &middot; Accepting cash at non-confirmed prices &middot; Splitting bookings to generate duplicate Commission. All are grounds for immediate termination."}
   ]},
   {n:"03",t:"Complaints Handling Policy",s:"24-hour acknowledgement, in-resort escalation, post-travel process",sections:[
     {h:"Core Obligations",b:"Acknowledge every complaint within 24 hours. Log on TripFactory's complaints portal within 24 hours. Notify your BDM immediately for personal injury, death, financial loss, legal threat, or media involvement. Never promise compensation without TripFactory's written approval."},
-    {h:"In-Resort Procedure (6 Steps)",b:"1. Respond within 2 hours. 2. Direct Customer to supplier emergency contact. 3. Notify TripFactory Operations simultaneously. 4. Log all communications with timestamps. 5. Follow up with Customer within 4 hours. 6. Continue monitoring until fully resolved."},
+    {h:"In-Resort Procedure",b:"(1) Respond within 2 hours. (2) Direct Customer to supplier emergency contact. (3) Notify TripFactory Operations simultaneously. (4) Log all communications with timestamps. (5) Follow up with Customer within 4 hours. (6) Continue monitoring until fully resolved."},
     {h:"Post-Travel Complaints",b:"Customer must complain in writing within 28 days of return. Forward to TripFactory within 3 working days with all supporting documentation. Update Customer every 5 working days. If unresolved in 14 days, TripFactory operations team takes over."},
-    {h:"Compensation",b:"Never offer compensation, refunds, or goodwill gestures without TripFactory's explicit written authorisation. If the complaint arises from the PSA's own error, the PSA may be required to contribute to or fully fund the resulting compensation."}
+    {h:"Compensation",b:"Never offer compensation, refunds, or goodwill gestures without TripFactory's explicit written authorisation. If a complaint arises from the PSA's own error, the PSA may be required to contribute to or fully fund the resulting compensation."}
   ]},
-  {n:"04",t:"Payment & Fraud Prevention Policy",s:"Approved channels, payment timelines, fraud red flags",sections:[
-    {h:"Approved Payment Channels Only",b:"TripFactory's payment portal · Designated bank account (NEFT/RTGS/IMPS) · Designated UPI ID. NEVER accept: cash · payments into your own account · your own UPI · cryptocurrency · post-dated cheques. Violation = immediate termination."},
+  {n:"04",t:"Payment &amp; Fraud Prevention Policy",s:"Approved channels, payment timelines, fraud red flags",sections:[
+    {h:"Approved Channels Only",b:"TripFactory's payment portal &middot; Designated bank account (NEFT/RTGS/IMPS) &middot; Designated UPI ID. NEVER accept: cash &middot; payments into your own account &middot; your own UPI &middot; cryptocurrency &middot; post-dated cheques. Violation = immediate termination."},
     {h:"Payment Timelines",b:"Booking deposit: remit to TripFactory on same working day of receipt. Customer balance: 30 days before departure. Credit Facility bookings: per booking confirmation due date. Group instalments: within 48 hours. Visa/ancillary fees: on day of receipt."},
-    {h:"Fraud Red Flags — Stop and Call Your BDM",b:"Customer offers to pay above the quoted price · Payment requested across multiple accounts · Card not in Customer's name · Customer evasive about travel purpose · Refund requested to different account than original payment. Report within 2 hours."},
+    {h:"Fraud Red Flags",b:"Stop and call your BDM immediately if: Customer offers to pay above quoted price &middot; Payment split across multiple accounts &middot; Card not in Customer's name &middot; Customer evasive about travel purpose &middot; Refund requested to a different account than original payment."},
     {h:"Third Party Payments",b:"Notify TripFactory before accepting any payment from a person not named on the booking. Get written approval. Verify and record the paying party's identity. PSA is personally liable for any resulting chargeback, fraud, or loss."}
   ]},
-  {n:"05",t:"Data Protection Policy — DPDPA 2023",s:"Data categories, security, 72-hour breach notification",sections:[
+  {n:"05",t:"Data Protection Policy &mdash; DPDPA 2023",s:"Data categories, security, 72-hour breach notification",sections:[
     {h:"Legal Basis",b:"The Digital Personal Data Protection Act 2023 governs all Customer personal data you handle on TripFactory's behalf. Violations may result in regulatory penalties, civil liability, and immediate PSA Agreement termination."},
-    {h:"Permitted Uses Only",b:"Customer data may only be used to: arrange and confirm the specific TripFactory booking · comply with local regulatory requirements · handle emergencies. Never use for marketing your own products, building your own database, or sharing with third parties."},
-    {h:"Security Requirements",b:"Store data only in TripFactory's approved systems. Never store passport copies in personal phone gallery, personal email drafts, or personal cloud storage. Never send sensitive data via unencrypted WhatsApp or standard email. Change your platform password every 90 days."},
-    {h:"72-Hour Breach Notification — The Law",b:"If Customer data is lost, stolen, or accessed without authorisation: call TripFactory immediately and confirm in writing within 72 hours. Do not wait until the cause is confirmed. REPORT FIRST. INVESTIGATE SECOND. Failure to notify is itself a separate regulatory violation."}
+    {h:"Permitted Uses Only",b:"Customer data may only be used to: arrange and confirm the specific TripFactory booking &middot; comply with local regulatory requirements &middot; handle emergencies. Never use for marketing your own products or building your own customer database."},
+    {h:"Security Requirements",b:"Store data only in TripFactory's approved systems. Never store passport copies in personal phone gallery, personal email, or personal cloud storage. Never send sensitive data via unencrypted WhatsApp or standard email."},
+    {h:"72-Hour Breach Notification",b:"If Customer data is lost, stolen, or accessed without authorisation: call TripFactory immediately and confirm in writing within 72 hours. Do not wait until the cause is confirmed. REPORT FIRST. INVESTIGATE SECOND."}
   ]},
-  {n:"06",t:"Anti-Bribery & Corruption Policy",s:"Zero tolerance, gifts rules, reporting obligations",sections:[
+  {n:"06",t:"Anti-Bribery &amp; Corruption Policy",s:"Zero tolerance, gifts rules, reporting obligations",sections:[
     {h:"Zero Tolerance",b:"TripFactory maintains zero tolerance on bribery and corruption. This policy applies to all PSA Partners and their staff in all activities connected to TripFactory's business."},
-    {h:"What Constitutes Bribery",b:"Offering payments to government officials for preferential treatment · Accepting benefits from suppliers in exchange for booking commitments · Paying undisclosed referral fees · Accepting kickbacks from restaurants or attractions for directing TripFactory Customers."},
-    {h:"Gifts & Hospitality Rules",b:"Acceptable (no declaration needed): branded promotional items of low value, supplier event meals. Declare to BDM within 5 days: any gift exceeding ₹2,500 in value, sponsored travel. Never acceptable: cash or cash-equivalent gifts from any party, gifts from government officials."},
-    {h:"Reporting",b:"Immediately report any request for or offer of a bribe, or any suspicion of corruption, to your BDM by phone then confirmed in writing. TripFactory treats all reports in strict confidence. No adverse consequences for good-faith reports."}
+    {h:"What Constitutes Bribery",b:"Offering payments to government officials for preferential treatment &middot; Accepting benefits from suppliers in exchange for booking commitments &middot; Paying undisclosed referral fees &middot; Accepting kickbacks from restaurants or attractions."},
+    {h:"Gifts &amp; Hospitality Rules",b:"Acceptable (no declaration needed): branded promotional items of low value, supplier event meals. Must declare to BDM within 5 days: any gift exceeding &#8377;2,500. Never acceptable: cash gifts, gifts from government officials."},
+    {h:"Reporting",b:"Immediately report any request for or offer of a bribe, or any suspicion of corruption, to your BDM by phone then confirmed in writing. TripFactory treats all reports in strict confidence."}
   ]},
   {n:"07",t:"GST Compliance Guide",s:"Commission GST, registration thresholds, invoicing, records",sections:[
     {h:"How GST Works for PSAs",b:"TripFactory handles GST on package sales. Your Commission income is a service fee subject to 18% GST (SAC 998551) where you are registered. TripFactory deducts TDS under Section 194H and issues Form 16A annually."},
-    {h:"Registration",b:"GST registration is mandatory if your annual aggregate turnover exceeds ₹20 Lakhs (₹10 Lakhs in special category states). Apply at gst.gov.in within 30 days of crossing the threshold. Late registration carries penalties."},
-    {h:"Invoice Requirements",b:"Every Commission receipt requires a Tax Invoice showing: your GSTIN · TripFactory's GSTIN · invoice number and date · service description · SAC code · base Commission amount · GST at 18% as a separate line · total · your bank details."},
-    {h:"Record Keeping",b:"Retain all Commission invoices, TDS certificates (Form 16A), GST returns, and bank statements for a minimum of 7 years. TDS certificates should be retained permanently. Maintain these on the same basis as your own business financial records."}
+    {h:"Registration",b:"GST registration is mandatory if your annual aggregate turnover exceeds &#8377;20 Lakhs. Apply at gst.gov.in within 30 days of crossing the threshold. Late registration carries penalties."},
+    {h:"Invoice Requirements",b:"Every Commission receipt requires a Tax Invoice showing: your GSTIN &middot; TripFactory's GSTIN &middot; invoice number and date &middot; service description &middot; SAC code &middot; base Commission amount &middot; GST at 18% separately &middot; total &middot; your bank details."},
+    {h:"Record Keeping",b:"Retain all Commission invoices, TDS certificates (Form 16A), GST returns, and bank statements for a minimum of 7 years."}
   ]},
   {n:"08",t:"Trip-Ed Module Access Guide",s:"Portal access, categories, annual minimums, certificates",sections:[
-    {h:"What is Trip-Ed?",b:"TripFactory Education Programme — structured professional training and development. Completion of Trip-Ed minimum requirements is a contractual obligation under Schedule C and Clause 13 of your PSA Agreement."},
-    {h:"Annual Minimums",b:"Trip-Ed Induction (3 days): 100% before your first booking. Online Modules: minimum 12 per year. Supplier/Destination Events: minimum 8 per year. Business Plan: within 60 days of Effective Date. Quarterly Business Reviews: 4 per year."},
-    {h:"Module Categories",b:"Destination Modules · Product Modules (FIT, Groups, MICE, Fixed Departures) · Sales Skills (WhatsApp selling, objection handling, closing) · Compliance (DPDPA, GST, fraud prevention) · Business Development. Each module counts as 1 towards your annual minimum of 12."},
-    {h:"Consequences of Non-Compliance",b:"After written warning: Commission payment may be suspended · tier demotion · formal breach notice · termination. Use the Trip-Ed tab on this Hub to access your training portal directly."}
+    {h:"What is Trip-Ed?",b:"TripFactory Education Programme &mdash; structured professional training and development. Completion of Trip-Ed minimum requirements is a contractual obligation under Schedule C and Clause 13 of your PSA Agreement."},
+    {h:"Annual Minimums",b:"Trip-Ed Induction (3 days): 100% complete before your first booking. Online Modules: minimum 12 per year. Supplier/Destination Events: minimum 8 per year. Business Plan: within 60 days of Effective Date. Quarterly Business Reviews: 4 per year."},
+    {h:"Module Categories",b:"Destination Modules &middot; Product Modules (FIT, Groups, MICE, Fixed Departures) &middot; Sales Skills &middot; Compliance (DPDPA, GST, fraud prevention) &middot; Business Development. Each module counts as 1 towards your annual minimum of 12."},
+    {h:"Consequences of Non-Compliance",b:"After written warning: Commission payment may be suspended &middot; tier demotion &middot; formal breach notice &middot; termination. Use the Trip-Ed tab on this Hub to access your training portal."}
   ]},
   {n:"09",t:"Business Plan Template",s:"12-month plan, submission deadline, review process",sections:[
-    {h:"Submission Deadline — 60 Days",b:"Every PSA must submit a completed 12-Month Business Plan within 60 days of the Effective Date. This is a contractual obligation under Clause 11.3. Failure to submit is an SLA breach triggering a formal written warning."},
-    {h:"What the Plan Must Cover",b:"Monthly pax and gross sales targets (12-row table) · Top destinations · Lead generation strategy by channel (community groups, Rotary, BNI, referrals, social media, WhatsApp) · Marketing calendar by month · Commission and Credit Facility targets · Annual summary."},
-    {h:"Business Planning Session",b:"Within 30 days of completing your 3-Day Trip-Ed Induction, your BDM will hold a dedicated 1-day Business Planning Session. This session produces your first Business Plan collaboratively with your BDM."},
-    {h:"Review Cycle",b:"The Business Plan is reviewed at each Quarterly Business Review. Progress against monthly targets is assessed and the plan updated collaboratively. Where performance is significantly below plan, a revised plan may be required within 30 days."}
+    {h:"Submission Deadline",b:"Every PSA must submit a completed 12-Month Business Plan within 60 days of the Effective Date. This is a contractual obligation under Clause 11.3. Failure to submit is an SLA breach triggering a formal written warning."},
+    {h:"What the Plan Must Cover",b:"Monthly pax and gross sales targets &middot; Top destinations &middot; Lead generation strategy by channel (community groups, Rotary, BNI, referrals, social media, WhatsApp) &middot; Marketing calendar &middot; Commission and Credit Facility targets &middot; Annual summary."},
+    {h:"Business Planning Session",b:"Within 30 days of completing your 3-Day Trip-Ed Induction, your BDM will hold a dedicated 1-day Business Planning Session. This session produces your first Business Plan collaboratively."},
+    {h:"Review Cycle",b:"The Business Plan is reviewed at each Quarterly Business Review. Progress against monthly targets is assessed and the plan updated collaboratively with your BDM."}
   ]},
   {n:"10",t:"PSA Resource Hub Access Guide",s:"Hub contents, access, security, policy updates",sections:[
-    {h:"What is on This Hub",b:"Current Policy Pack (all 11 policies) · PSA Agreement v2.0 · Trip-Ed portal · Monthly marketing asset pack · Co-branded pitch deck, email signature, and quotation templates · Booking platform user guide · Credit Facility dashboard guide · Business Plan template."},
-    {h:"Login Security",b:"Do not share your Hub login with any person — including staff or family. Log out on any shared or public device. Change your password immediately if you suspect unauthorised access. Report suspected access to your BDM by phone within 2 hours."},
-    {h:"Policy Update Process",b:"When any policy is updated: TripFactory publishes the new version with a version number and effective date · Notifies you by email and WhatsApp from your BDM with a summary of key changes · Makes the update effective 30 days after notification. It is your responsibility to read each update."}
+    {h:"What is on This Hub",b:"Current Policy Pack (all 11 policies) &middot; PSA Agreement v2.0 &middot; Trip-Ed portal &middot; Monthly marketing asset pack &middot; Co-branded templates &middot; Booking platform user guide &middot; Credit Facility dashboard guide &middot; Business Plan template."},
+    {h:"Login Security",b:"Do not share your Hub login with any person including staff or family. Log out on any shared or public device. Change your password immediately if you suspect unauthorised access. Report suspected access to your BDM by phone within 2 hours."},
+    {h:"Policy Update Process",b:"When any policy is updated: TripFactory publishes the new version with version number and effective date &middot; Notifies you by email and WhatsApp from your BDM with a summary of key changes &middot; Makes the update effective 30 days after notification."}
   ]},
   {n:"11",t:"Credit Facility Policy",s:"Credit Limit, Default Events, Security Deposit, drawdown and replenishment",sections:[
-    {h:"What the Credit Facility Is — and Is Not",b:"The Credit Facility allows TripFactory to confirm bookings as soon as a Customer's deposit is received, even where the Customer's balance has not yet been paid. It is NOT a loan. TripFactory is not advancing funds. You remain fully responsible for collecting and remitting Customer balances."},
-    {h:"Credit Limit = 4× Security Deposit",b:"Lodge a Security Deposit and your Credit Limit = 4× that amount. The limit is reduced by each outstanding Customer balance and restored as TripFactory receives Customer payments. To increase your Credit Limit, lodge a higher Security Deposit."},
-    {h:"Default Events",b:"A Default Event occurs where: Customer balance not received by due date · Cancellation shortfall (deposit insufficient to cover supplier costs) · Customer chargeback · Credit Limit exceeded · Payment policy breach · PSA insolvency. TripFactory may draw on your Security Deposit and suspend the Facility."},
-    {h:"Security Deposit Replenishment",b:"If TripFactory draws on your Security Deposit, you must replenish to the full required amount within 14 days of written notice. Failure: Credit Limit reduced to nil, all bookings moved to pre-paid basis, and formal breach notice issued under Clause 17.2."}
+    {h:"What the Credit Facility Is",b:"The Credit Facility allows TripFactory to confirm bookings as soon as a Customer's deposit is received, even where the Customer's balance has not yet been paid. It is NOT a loan. You remain fully responsible for collecting and remitting Customer balances."},
+    {h:"Credit Limit = 4x Security Deposit",b:"Lodge a Security Deposit and your Credit Limit = 4x that amount. The limit is reduced by each outstanding Customer balance and restored as TripFactory receives Customer payments. Lodge a higher deposit to increase your limit."},
+    {h:"Default Events",b:"A Default Event occurs where: Customer balance not received by due date &middot; Cancellation shortfall &middot; Customer chargeback &middot; Credit Limit exceeded &middot; Payment policy breach &middot; PSA insolvency. TripFactory may draw on your Security Deposit and suspend the Facility."},
+    {h:"Security Deposit Replenishment",b:"If TripFactory draws on your Security Deposit, you must replenish to the full required amount within 14 days of written notice. Failure: Credit Limit reduced to nil, all bookings moved to pre-paid basis, and formal breach notice issued."}
   ]}
 ];
 
 (function buildPolicies(){
-  const list = document.getElementById('plist');
-  policies.forEach((p, i) => {
-    const el = document.createElement('div');
+  var list = document.getElementById('plist');
+  if (!list) return;
+  policies.forEach(function(p, i) {
+    var el = document.createElement('div');
     el.className = 'p-item';
-    el.innerHTML = `
-      <div class="p-hdr" onclick="toggleP(${i})">
-        <div class="p-num">${p.n}</div>
-        <div class="p-info">
-          <div class="p-title">${p.t}</div>
-          <div class="p-sub">${p.s}</div>
-        </div>
-        <div class="p-chev">▼</div>
-      </div>
-      <div class="p-body">${p.sections.map(s=>`
-        <div class="ps">
-          <div class="ps-t">${s.h}</div>
-          <p>${s.b}</p>
-        </div>`).join('')}
-      </div>`;
+    var inner = '<div class="p-hdr" onclick="toggleP(' + i + ')">';
+    inner += '<div class="p-num">' + p.n + '</div>';
+    inner += '<div class="p-info"><div class="p-title">' + p.t + '</div><div class="p-sub">' + p.s + '</div></div>';
+    inner += '<div class="p-chev">&#9660;</div></div>';
+    inner += '<div class="p-body">';
+    p.sections.forEach(function(s){
+      inner += '<div class="ps"><div class="ps-t">' + s.h + '</div><p>' + s.b + '</p></div>';
+    });
+    inner += '</div>';
+    el.innerHTML = inner;
     list.appendChild(el);
   });
 })();
@@ -2060,6 +1964,7 @@ const policies = [
 function toggleP(i){
   document.querySelectorAll('.p-item')[i].classList.toggle('open');
 }
+
 </script>
 </body>
 </html>
