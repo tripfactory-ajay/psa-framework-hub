@@ -1795,7 +1795,7 @@ body{font-family:'Plus Jakarta Sans',sans-serif;background:#fff;color:var(--text
 </main>
 
 <script>
-let done = new Set(['bali']);
+var done = new Set(['bali']);
 
 const titles = {
   dashboard:'Dashboard',bali:'Destination — Bali',thailand:'Destination — Thailand',
@@ -1867,9 +1867,9 @@ function complete(mod) {
 <!-- Trip-Ed script stored in a non-executing script tag -->
 <script id="tripped-script-src" type="text/plain">
 
-let done = new Set(['bali']);
+var done = new Set(['bali']);
 
-const titles = {
+var titles = {
   dashboard:'Dashboard',bali:'Destination — Bali',thailand:'Destination — Thailand',
   uk:'Destination — United Kingdom',uae:'Destination — UAE',
   sales:'Skills — Sales & WhatsApp',compliance:'Skills — Compliance & DPDPA',
@@ -1929,7 +1929,7 @@ function complete(mod) {
   document.getElementById('prog-txt').textContent = n + ' / 12 modules';
   document.getElementById('prog-fill').style.width = Math.min(100,(n/12)*100)+'%';
   alert('🎉 Module complete! +20 points added to your Trip-Ed score.');
-  te_te_showPage('dashboard');
+  te_showPage('dashboard');
 }
 
 </script>
